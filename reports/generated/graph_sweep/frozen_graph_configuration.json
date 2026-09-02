@@ -1,0 +1,6 @@
+{
+  "edge_feature": "part",
+  "k": 50,
+  "pairwise_lambda": 0.25,
+  "sigma_factor": 0.5
+}

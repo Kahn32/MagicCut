@@ -1,0 +1,81 @@
+{
+  "decision": "do_not_retain",
+  "features": [
+    "normalized_surface_area",
+    "centroid_xyz",
+    "bbox_xyz",
+    "radial_histogram_8"
+  ],
+  "mesh_audit": {
+    "alfajor_shell_pattern": [
+      2,
+      1,
+      1941
+    ],
+    "benchmark_components_reconstructed": 5207,
+    "feature_dimension": 15,
+    "mapping_representatives": [
+      0,
+      2,
+      3,
+      650,
+      5201,
+      5202,
+      5203,
+      5204,
+      5205,
+      5206
+    ],
+    "mesh_shells_after_vertex_merge": 15568,
+    "representatives": 10,
+    "scene_geometries": 29
+  },
+  "mesh_sha256": "dcac811187e4537e164dd2d72c4f6b41bbf4dadfa31b6c5654c37bc9cdf7d047",
+  "mesh_uid": "ffc0e9978ea342739e7abd6abcb1a437",
+  "reason": "Validation-only selection; raw geometry did not improve the audited case.",
+  "selected": {
+    "f1": 0.9,
+    "geometry_alpha": 0.0,
+    "precision": 1.0,
+    "recall": 0.8333333333333333
+  },
+  "sweep": [
+    {
+      "f1": 0.9,
+      "geometry_alpha": 0.0,
+      "precision": 1.0,
+      "recall": 0.8333333333333333
+    },
+    {
+      "f1": 0.9,
+      "geometry_alpha": 0.1,
+      "precision": 1.0,
+      "recall": 0.8333333333333333
+    },
+    {
+      "f1": 0.9,
+      "geometry_alpha": 0.25,
+      "precision": 1.0,
+      "recall": 0.8333333333333333
+    },
+    {
+      "f1": 0.9,
+      "geometry_alpha": 0.5,
+      "precision": 1.0,
+      "recall": 0.8333333333333333
+    },
+    {
+      "f1": 0.9,
+      "geometry_alpha": 1.0,
+      "precision": 1.0,
+      "recall": 0.8333333333333333
+    },
+    {
+      "f1": 0.9,
+      "geometry_alpha": 2.0,
+      "precision": 1.0,
+      "recall": 0.8333333333333333
+    }
+  ],
+  "validation_queries": 2
+}

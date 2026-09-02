@@ -1,0 +1,78 @@
+{
+  "acceptance_case": {
+    "candidate_count": 82,
+    "query": 189,
+    "uid": "8186e08947664545be29caae9c9ff01c"
+  },
+  "backend": {
+    "feedback_roundtrip_ms": [
+      11.122668000098201,
+      11.023486000340199,
+      35.699564999958966
+    ],
+    "http_statuses": {
+      "feedback_1": 200,
+      "feedback_2": 200,
+      "feedback_3": 200,
+      "render": 200,
+      "reset": 200,
+      "start": 200
+    },
+    "interaction_history": [
+      {
+        "click": 0,
+        "recommended_part": 14,
+        "selected": 3
+      },
+      {
+        "click": 1,
+        "recommended_part": 219,
+        "selected": 3
+      },
+      {
+        "click": 2,
+        "recommended_part": 375,
+        "selected": 3
+      },
+      {
+        "click": 3,
+        "recommended_part": 0,
+        "selected": 3
+      }
+    ],
+    "load_ms": 1188.5252320007567,
+    "partition_complete": true,
+    "render_bytes": 43341,
+    "reset_verified": true,
+    "start_roundtrip_ms": 402.0773559996087
+  },
+  "interface": {
+    "colors": {
+      "query_red": true,
+      "recommended_blue": true,
+      "selected_orange": true,
+      "uncertain_yellow": true
+    },
+    "required_controls": [
+      "mesh",
+      "query",
+      "run",
+      "reset",
+      "clicks",
+      "confidence",
+      "yes",
+      "no",
+      "parts"
+    ],
+    "required_endpoints": [
+      "/api/meshes",
+      "/api/start",
+      "/api/feedback",
+      "/api/reset",
+      "/api/render/"
+    ]
+  },
+  "mesh_count": 100,
+  "representative_count": 25348,
+  "source_raw_results_sha256": "ad78a55b9faebce7940bc2687a499549b1d68f988d9ca965295146abc53129bf"
+}

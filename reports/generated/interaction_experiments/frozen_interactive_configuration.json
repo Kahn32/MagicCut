@@ -1,0 +1,18 @@
+{
+  "clarification_policy": "influence_aware",
+  "click_budget": 3,
+  "dataset_revision": "52b0489beef04a81453944dba4d3c098fbaffe60",
+  "graph": {
+    "edge_feature": "part",
+    "k": 50,
+    "pairwise_lambda": 0.25,
+    "sigma_factor": 0.5
+  },
+  "influence_weights": {
+    "degree": 0.0,
+    "diversity": 0.5,
+    "uncertainty": 0.5
+  },
+  "probability_threshold": 0.3222533223833185,
+  "uncertainty_method": "calibration_entropy"
+}

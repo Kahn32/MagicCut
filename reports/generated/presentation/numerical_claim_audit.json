@@ -1,0 +1,98 @@
+{
+  "claims": {
+    "active_3_delta": {
+      "source": "statistics.report.heldout_94_meshes.mesh_bootstrap_95_ci",
+      "value": {
+        "bootstrap_unit": "mesh",
+        "ci_95_high": -0.05505690013326087,
+        "ci_95_low": -0.18122482352777528,
+        "estimate": -0.11461287441880923,
+        "evidence_of_direction_at_95pct": true,
+        "samples": 5000
+      }
+    },
+    "active_3_f1": {
+      "source": "locked_evaluation.report.heldout_94_meshes.active[3].f1",
+      "value": 0.6221950799499898
+    },
+    "active_3_minus_magiccut_delta": {
+      "source": "statistics.report.heldout_94_meshes.mesh_bootstrap_95_ci",
+      "value": {
+        "bootstrap_unit": "mesh",
+        "ci_95_high": 0.16637063561631796,
+        "ci_95_low": 0.11954179020510428,
+        "estimate": 0.1428415230777846,
+        "evidence_of_direction_at_95pct": true,
+        "samples": 5000
+      }
+    },
+    "fixed_paper_facts": {
+      "source": "Material Magic Wand arXiv:2603.17370v1 and audited release metadata",
+      "value": {
+        "feature_dimension": 1152,
+        "meshes": 100,
+        "queries": 241,
+        "render_contexts": 3
+      }
+    },
+    "full_query_count": {
+      "source": "locked_evaluation.report.full_100_meshes.query_count",
+      "value": 241
+    },
+    "heldout_mesh_count": {
+      "source": "locked_evaluation.report.heldout_94_meshes.mesh_count",
+      "value": 94
+    },
+    "heldout_query_count": {
+      "source": "locked_evaluation.report.heldout_94_meshes.query_count",
+      "value": 230
+    },
+    "magiccut_f1": {
+      "source": "locked_evaluation.report.heldout_94_meshes.methods.magiccut.f1",
+      "value": 0.4793535568722051
+    },
+    "mmw_f1": {
+      "source": "locked_evaluation.report.heldout_94_meshes.methods.material_magic_wand.f1",
+      "value": 0.736807954368799
+    },
+    "raw_results_sha256": {
+      "source": "sha256(raw_results.json)",
+      "value": "ad78a55b9faebce7940bc2687a499549b1d68f988d9ca965295146abc53129bf"
+    }
+  },
+  "generated_files": [
+    {
+      "path": "README.md",
+      "sha256": "9f71b9071dddf500716e53a48fdde8f1afe1e664e6944bdc75c287513755b079"
+    },
+    {
+      "path": "docs/research_writeup.md",
+      "sha256": "9c43bbe431c87a000ccb4e4ae2a78a3f5e2b461d512581cce302da910ddcc70e"
+    },
+    {
+      "path": "docs/technical_summary.md",
+      "sha256": "1cbd013156458e620f84d8b3d0d8b7bf6dc46bbad6d27d0a9b89b98dc4e776da"
+    },
+    {
+      "path": "docs/three_minute_demo_script.md",
+      "sha256": "7b0f281a14c50ada866a77082751a30d6f9f7226feba57fad572ddd9608eb854"
+    },
+    {
+      "path": "docs/outreach_package.md",
+      "sha256": "538f103367b7feaf5ff66d0f3cb1796308be27604380e1342e7fdc549b089ada"
+    }
+  ],
+  "policy": "All experiment numbers are formatted from locked evaluation/36 data; fixed benchmark facts are grounded in the primary paper and audited release metadata.",
+  "source_raw_results_sha256": "ad78a55b9faebce7940bc2687a499549b1d68f988d9ca965295146abc53129bf",
+  "status": "passed",
+  "wording_audit_hits_reviewed": [
+    {
+      "path": "docs/research_writeup.md",
+      "term": "state of the art"
+    },
+    {
+      "path": "docs/outreach_package.md",
+      "term": "state of the art"
+    }
+  ]
+}

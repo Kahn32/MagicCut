@@ -1,0 +1,336 @@
+{
+  "checkpoint": {
+    "all_parameter_names": [
+      "backbone.blocks.0.attn.proj.bias",
+      "backbone.blocks.0.attn.proj.weight",
+      "backbone.blocks.0.attn.qkv.bias",
+      "backbone.blocks.0.attn.qkv.weight",
+      "backbone.blocks.0.ls1.gamma",
+      "backbone.blocks.0.ls2.gamma",
+      "backbone.blocks.0.mlp.fc1.bias",
+      "backbone.blocks.0.mlp.fc1.weight",
+      "backbone.blocks.0.mlp.fc2.bias",
+      "backbone.blocks.0.mlp.fc2.weight",
+      "backbone.blocks.0.norm1.bias",
+      "backbone.blocks.0.norm1.weight",
+      "backbone.blocks.0.norm2.bias",
+      "backbone.blocks.0.norm2.weight",
+      "backbone.blocks.1.attn.proj.bias",
+      "backbone.blocks.1.attn.proj.weight",
+      "backbone.blocks.1.attn.qkv.bias",
+      "backbone.blocks.1.attn.qkv.weight",
+      "backbone.blocks.1.ls1.gamma",
+      "backbone.blocks.1.ls2.gamma",
+      "backbone.blocks.1.mlp.fc1.bias",
+      "backbone.blocks.1.mlp.fc1.weight",
+      "backbone.blocks.1.mlp.fc2.bias",
+      "backbone.blocks.1.mlp.fc2.weight",
+      "backbone.blocks.1.norm1.bias",
+      "backbone.blocks.1.norm1.weight",
+      "backbone.blocks.1.norm2.bias",
+      "backbone.blocks.1.norm2.weight",
+      "backbone.blocks.10.attn.proj.bias",
+      "backbone.blocks.10.attn.proj.weight",
+      "backbone.blocks.10.attn.qkv.bias",
+      "backbone.blocks.10.attn.qkv.weight",
+      "backbone.blocks.10.ls1.gamma",
+      "backbone.blocks.10.ls2.gamma",
+      "backbone.blocks.10.mlp.fc1.bias",
+      "backbone.blocks.10.mlp.fc1.weight",
+      "backbone.blocks.10.mlp.fc2.bias",
+      "backbone.blocks.10.mlp.fc2.weight",
+      "backbone.blocks.10.norm1.bias",
+      "backbone.blocks.10.norm1.weight",
+      "backbone.blocks.10.norm2.bias",
+      "backbone.blocks.10.norm2.weight",
+      "backbone.blocks.11.attn.proj.bias",
+      "backbone.blocks.11.attn.proj.weight",
+      "backbone.blocks.11.attn.qkv.bias",
+      "backbone.blocks.11.attn.qkv.weight",
+      "backbone.blocks.11.ls1.gamma",
+      "backbone.blocks.11.ls2.gamma",
+      "backbone.blocks.11.mlp.fc1.bias",
+      "backbone.blocks.11.mlp.fc1.weight",
+      "backbone.blocks.11.mlp.fc2.bias",
+      "backbone.blocks.11.mlp.fc2.weight",
+      "backbone.blocks.11.norm1.bias",
+      "backbone.blocks.11.norm1.weight",
+      "backbone.blocks.11.norm2.bias",
+      "backbone.blocks.11.norm2.weight",
+      "backbone.blocks.2.attn.proj.bias",
+      "backbone.blocks.2.attn.proj.weight",
+      "backbone.blocks.2.attn.qkv.bias",
+      "backbone.blocks.2.attn.qkv.weight",
+      "backbone.blocks.2.ls1.gamma",
+      "backbone.blocks.2.ls2.gamma",
+      "backbone.blocks.2.mlp.fc1.bias",
+      "backbone.blocks.2.mlp.fc1.weight",
+      "backbone.blocks.2.mlp.fc2.bias",
+      "backbone.blocks.2.mlp.fc2.weight",
+      "backbone.blocks.2.norm1.bias",
+      "backbone.blocks.2.norm1.weight",
+      "backbone.blocks.2.norm2.bias",
+      "backbone.blocks.2.norm2.weight",
+      "backbone.blocks.3.attn.proj.bias",
+      "backbone.blocks.3.attn.proj.weight",
+      "backbone.blocks.3.attn.qkv.bias",
+      "backbone.blocks.3.attn.qkv.weight",
+      "backbone.blocks.3.ls1.gamma",
+      "backbone.blocks.3.ls2.gamma",
+      "backbone.blocks.3.mlp.fc1.bias",
+      "backbone.blocks.3.mlp.fc1.weight",
+      "backbone.blocks.3.mlp.fc2.bias",
+      "backbone.blocks.3.mlp.fc2.weight",
+      "backbone.blocks.3.norm1.bias",
+      "backbone.blocks.3.norm1.weight",
+      "backbone.blocks.3.norm2.bias",
+      "backbone.blocks.3.norm2.weight",
+      "backbone.blocks.4.attn.proj.bias",
+      "backbone.blocks.4.attn.proj.weight",
+      "backbone.blocks.4.attn.qkv.bias",
+      "backbone.blocks.4.attn.qkv.weight",
+      "backbone.blocks.4.ls1.gamma",
+      "backbone.blocks.4.ls2.gamma",
+      "backbone.blocks.4.mlp.fc1.bias",
+      "backbone.blocks.4.mlp.fc1.weight",
+      "backbone.blocks.4.mlp.fc2.bias",
+      "backbone.blocks.4.mlp.fc2.weight",
+      "backbone.blocks.4.norm1.bias",
+      "backbone.blocks.4.norm1.weight",
+      "backbone.blocks.4.norm2.bias",
+      "backbone.blocks.4.norm2.weight",
+      "backbone.blocks.5.attn.proj.bias",
+      "backbone.blocks.5.attn.proj.weight",
+      "backbone.blocks.5.attn.qkv.bias",
+      "backbone.blocks.5.attn.qkv.weight",
+      "backbone.blocks.5.ls1.gamma",
+      "backbone.blocks.5.ls2.gamma",
+      "backbone.blocks.5.mlp.fc1.bias",
+      "backbone.blocks.5.mlp.fc1.weight",
+      "backbone.blocks.5.mlp.fc2.bias",
+      "backbone.blocks.5.mlp.fc2.weight",
+      "backbone.blocks.5.norm1.bias",
+      "backbone.blocks.5.norm1.weight",
+      "backbone.blocks.5.norm2.bias",
+      "backbone.blocks.5.norm2.weight",
+      "backbone.blocks.6.attn.proj.bias",
+      "backbone.blocks.6.attn.proj.weight",
+      "backbone.blocks.6.attn.qkv.bias",
+      "backbone.blocks.6.attn.qkv.weight",
+      "backbone.blocks.6.ls1.gamma",
+      "backbone.blocks.6.ls2.gamma",
+      "backbone.blocks.6.mlp.fc1.bias",
+      "backbone.blocks.6.mlp.fc1.weight",
+      "backbone.blocks.6.mlp.fc2.bias",
+      "backbone.blocks.6.mlp.fc2.weight",
+      "backbone.blocks.6.norm1.bias",
+      "backbone.blocks.6.norm1.weight",
+      "backbone.blocks.6.norm2.bias",
+      "backbone.blocks.6.norm2.weight",
+      "backbone.blocks.7.attn.proj.bias",
+      "backbone.blocks.7.attn.proj.weight",
+      "backbone.blocks.7.attn.qkv.bias",
+      "backbone.blocks.7.attn.qkv.weight",
+      "backbone.blocks.7.ls1.gamma",
+      "backbone.blocks.7.ls2.gamma",
+      "backbone.blocks.7.mlp.fc1.bias",
+      "backbone.blocks.7.mlp.fc1.weight",
+      "backbone.blocks.7.mlp.fc2.bias",
+      "backbone.blocks.7.mlp.fc2.weight",
+      "backbone.blocks.7.norm1.bias",
+      "backbone.blocks.7.norm1.weight",
+      "backbone.blocks.7.norm2.bias",
+      "backbone.blocks.7.norm2.weight",
+      "backbone.blocks.8.attn.proj.bias",
+      "backbone.blocks.8.attn.proj.weight",
+      "backbone.blocks.8.attn.qkv.bias",
+      "backbone.blocks.8.attn.qkv.weight",
+      "backbone.blocks.8.ls1.gamma",
+      "backbone.blocks.8.ls2.gamma",
+      "backbone.blocks.8.mlp.fc1.bias",
+      "backbone.blocks.8.mlp.fc1.weight",
+      "backbone.blocks.8.mlp.fc2.bias",
+      "backbone.blocks.8.mlp.fc2.weight",
+      "backbone.blocks.8.norm1.bias",
+      "backbone.blocks.8.norm1.weight",
+      "backbone.blocks.8.norm2.bias",
+      "backbone.blocks.8.norm2.weight",
+      "backbone.blocks.9.attn.proj.bias",
+      "backbone.blocks.9.attn.proj.weight",
+      "backbone.blocks.9.attn.qkv.bias",
+      "backbone.blocks.9.attn.qkv.weight",
+      "backbone.blocks.9.ls1.gamma",
+      "backbone.blocks.9.ls2.gamma",
+      "backbone.blocks.9.mlp.fc1.bias",
+      "backbone.blocks.9.mlp.fc1.weight",
+      "backbone.blocks.9.mlp.fc2.bias",
+      "backbone.blocks.9.mlp.fc2.weight",
+      "backbone.blocks.9.norm1.bias",
+      "backbone.blocks.9.norm1.weight",
+      "backbone.blocks.9.norm2.bias",
+      "backbone.blocks.9.norm2.weight",
+      "backbone.cls_token",
+      "backbone.mask_token",
+      "backbone.norm.bias",
+      "backbone.norm.weight",
+      "backbone.patch_embed.proj.bias",
+      "backbone.patch_embed.proj.weight",
+      "backbone.pos_embed",
+      "head.0.bias",
+      "head.0.weight",
+      "head.2.bias",
+      "head.2.weight"
+    ],
+    "critical_parameter_shapes": {
+      "backbone.cls_token": [
+        1,
+        1,
+        384
+      ],
+      "backbone.patch_embed.proj.weight": [
+        384,
+        3,
+        14,
+        14
+      ],
+      "backbone.pos_embed": [
+        1,
+        1370,
+        384
+      ],
+      "head.0.bias": [
+        384
+      ],
+      "head.0.weight": [
+        384,
+        1152
+      ],
+      "head.2.bias": [
+        128
+      ],
+      "head.2.weight": [
+        128,
+        384
+      ]
+    },
+    "first_parameter_shapes": {
+      "backbone.blocks.0.attn.proj.bias": [
+        384
+      ],
+      "backbone.blocks.0.attn.proj.weight": [
+        384,
+        384
+      ],
+      "backbone.blocks.0.attn.qkv.bias": [
+        1152
+      ],
+      "backbone.blocks.0.attn.qkv.weight": [
+        1152,
+        384
+      ],
+      "backbone.blocks.0.ls1.gamma": [
+        384
+      ],
+      "backbone.blocks.0.ls2.gamma": [
+        384
+      ],
+      "backbone.blocks.0.mlp.fc1.bias": [
+        1536
+      ],
+      "backbone.blocks.0.mlp.fc1.weight": [
+        1536,
+        384
+      ],
+      "backbone.blocks.0.mlp.fc2.bias": [
+        384
+      ],
+      "backbone.blocks.0.mlp.fc2.weight": [
+        384,
+        1536
+      ],
+      "backbone.blocks.0.norm1.bias": [
+        384
+      ],
+      "backbone.blocks.0.norm1.weight": [
+        384
+      ],
+      "backbone.blocks.0.norm2.bias": [
+        384
+      ],
+      "backbone.blocks.0.norm2.weight": [
+        384
+      ],
+      "backbone.blocks.1.attn.proj.bias": [
+        384
+      ],
+      "backbone.blocks.1.attn.proj.weight": [
+        384,
+        384
+      ],
+      "backbone.blocks.1.attn.qkv.bias": [
+        1152
+      ],
+      "backbone.blocks.1.attn.qkv.weight": [
+        1152,
+        384
+      ],
+      "backbone.blocks.1.ls1.gamma": [
+        384
+      ],
+      "backbone.blocks.1.ls2.gamma": [
+        384
+      ],
+      "backbone.blocks.1.mlp.fc1.bias": [
+        1536
+      ],
+      "backbone.blocks.1.mlp.fc1.weight": [
+        1536,
+        384
+      ],
+      "backbone.blocks.1.mlp.fc2.bias": [
+        384
+      ],
+      "backbone.blocks.1.mlp.fc2.weight": [
+        384,
+        1536
+      ],
+      "backbone.blocks.1.norm1.bias": [
+        384
+      ],
+      "backbone.blocks.1.norm1.weight": [
+        384
+      ],
+      "backbone.blocks.1.norm2.bias": [
+        384
+      ],
+      "backbone.blocks.1.norm2.weight": [
+        384
+      ],
+      "backbone.blocks.10.attn.proj.bias": [
+        384
+      ],
+      "backbone.blocks.10.attn.proj.weight": [
+        384,
+        384
+      ]
+    },
+    "parameter_count": 179,
+    "path": "data/raw/checkpoints/checkpoint.pt",
+    "payload_type": "OrderedDict",
+    "sha256": "d86f28e222584d25be3d0d5017de60a88bf45b574d2bf5c73e12010ecfeefe97",
+    "sha256_matches_official": true,
+    "size_bytes": 90249468,
+    "size_matches_official": true,
+    "top_level_prefix_counts": {
+      "backbone": 175,
+      "head": 4
+    },
+    "total_tensor_values": 22548608
+  },
+  "model_files": [
+    ".gitattributes",
+    "checkpoint.pt"
+  ],
+  "model_repo": "umangijain/material-magic-wand",
+  "model_revision": "cfac3017592ab6925f3efe46ab90e53027c3ba45"
+}

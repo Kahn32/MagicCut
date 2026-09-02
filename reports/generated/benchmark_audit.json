@@ -1,0 +1,43 @@
+{
+  "benchmark": {
+    "labeled_mesh_count": 100,
+    "mesh_count": 100,
+    "missing_label_uids": [
+      "62a2594229754c58850935fc625679d3",
+      "6799cac112224eb5ae5d65de49700336",
+      "f113d5f93d8740fc81bc240536a394ac"
+    ],
+    "primary_query_in_final_count": 241,
+    "queries_missing_material_id": 2,
+    "queries_per_mesh_max": 8,
+    "queries_per_mesh_min": 1,
+    "queries_with_original_selection": 174,
+    "query_count": 241,
+    "target_size_max": 32267,
+    "target_size_median": 20,
+    "target_size_min": 2,
+    "unexpected_label_uids": [
+      "0ca222aa0f9d40ec8fa6ea9fc5db7166",
+      "4f02b2ba48e544ec846ea70605ed1b40",
+      "af389b9c83c146dd88c3f91246f1fb97"
+    ],
+    "unique_uid_count": 100
+  },
+  "dedup_metadata_exists": true,
+  "full_metadata_exists": true,
+  "metadata_downloaded": true,
+  "render_metadata": {
+    "deduplicated_mesh_count": 100,
+    "deduplicated_representative_count": 25348,
+    "full_mesh_count": 100,
+    "full_representative_count": 25348,
+    "representative_mappings_equal": true
+  },
+  "repo_file_count": 446,
+  "repo_file_groups": {
+    "deduplicated_render_archives": 100,
+    "full_render_archives": 100,
+    "labels": 241,
+    "other": 5
+  }
+}

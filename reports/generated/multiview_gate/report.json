@@ -1,0 +1,23 @@
+{
+  "audited_mesh_directories": 10,
+  "camera_view_tokens": [
+    "0"
+  ],
+  "camera_views_per_part": 1,
+  "crop_scale_tokens": [
+    "full",
+    "medium",
+    "small"
+  ],
+  "decision": "skip_optional_multiview_extension",
+  "occlusion_gate_passed": false,
+  "png_files": 504,
+  "reason": "The three released images are small/medium/full context crops from one camera token, not independent camera views; multiview variance would be fabricated.",
+  "view_feature_disagreement_heldout": {
+    "aurc": 0.12012758300447623,
+    "candidate_count": 175,
+    "error_detection_auroc": 0.5565862708719851,
+    "errors": 21,
+    "mean_seconds_per_query": 0.0003312653749674155
+  }
+}

@@ -1,0 +1,3513 @@
+{
+  "heldout": {
+    "f1": 0.7253151260504203,
+    "median_ms_per_query": 28.28261100000873,
+    "p95_ms_per_query": 53.63936559997455,
+    "precision": 0.7583333333333333,
+    "recall": 0.8166666666666667,
+    "worst_query_f1": 0.28571428571428575
+  },
+  "protocol": {
+    "affinity_temperatures": [
+      0.5,
+      1,
+      2
+    ],
+    "configurations": 216,
+    "edge_features": [
+      "part",
+      "context",
+      "combined"
+    ],
+    "heldout_used_for_selection": false,
+    "k_values": [
+      5,
+      10,
+      20,
+      50
+    ],
+    "pairwise_lambdas": [
+      0,
+      0.1,
+      0.25,
+      0.5,
+      1,
+      2
+    ],
+    "selection_split": "validation only"
+  },
+  "selected": {
+    "config": {
+      "edge_feature": "part",
+      "k": 50,
+      "pairwise_lambda": 0.25,
+      "sigma_factor": 0.5
+    },
+    "validation": {
+      "f1": 0.9171810645494856,
+      "median_ms_per_query": 7.6785689998359885,
+      "p95_ms_per_query": 47.820402999946054,
+      "precision": 0.976911976911977,
+      "recall": 0.8833333333333333,
+      "worst_query_f1": 0.6666666666666666
+    }
+  },
+  "sweep": [
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 5.507052999973894,
+        "p95_ms_per_query": 35.10791049995987,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 5.352665000145862,
+        "p95_ms_per_query": 25.25103450000188,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 5.215612000029068,
+        "p95_ms_per_query": 25.58914399992318,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 5.270332999998573,
+        "p95_ms_per_query": 25.55189849999806,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 5.319064999866896,
+        "p95_ms_per_query": 26.4744559999599,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 5.2923050000117655,
+        "p95_ms_per_query": 25.575368000090748,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 5.45595699986734,
+        "p95_ms_per_query": 26.868913500038616,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 6.102282000028936,
+        "p95_ms_per_query": 27.31092149997494,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 5.952851000074588,
+        "p95_ms_per_query": 27.269380500001716,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8715784215784216,
+        "median_ms_per_query": 5.287478000127521,
+        "p95_ms_per_query": 26.085085499971683,
+        "precision": 0.8644234553325462,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8655178155178156,
+        "median_ms_per_query": 5.362039000146979,
+        "p95_ms_per_query": 25.832353000055264,
+        "precision": 0.8530598189689098,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8715784215784216,
+        "median_ms_per_query": 5.276290999972844,
+        "p95_ms_per_query": 28.174295999860988,
+        "precision": 0.8644234553325462,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8503663003663003,
+        "median_ms_per_query": 6.043285000032483,
+        "p95_ms_per_query": 26.69665950008948,
+        "precision": 0.8795749704840614,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8724442224442225,
+        "median_ms_per_query": 5.166078999991441,
+        "p95_ms_per_query": 25.867579499958993,
+        "precision": 0.9363931523022433,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8572927072927073,
+        "median_ms_per_query": 5.598686999974234,
+        "p95_ms_per_query": 26.105471000050784,
+        "precision": 0.8909386068476978,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8724442224442225,
+        "median_ms_per_query": 5.293037000001277,
+        "p95_ms_per_query": 26.096989000052417,
+        "precision": 0.9363931523022433,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8724442224442225,
+        "median_ms_per_query": 5.23390900002596,
+        "p95_ms_per_query": 27.271928500113063,
+        "precision": 0.9363931523022433,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8724442224442225,
+        "median_ms_per_query": 5.259476999981416,
+        "p95_ms_per_query": 26.067480000165233,
+        "precision": 0.9363931523022433,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8715784215784216,
+        "median_ms_per_query": 5.27118399986648,
+        "p95_ms_per_query": 27.128366500051015,
+        "precision": 0.8644234553325462,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8936563436563436,
+        "median_ms_per_query": 5.6673789999877044,
+        "p95_ms_per_query": 26.426504999903955,
+        "precision": 0.9023022432113342,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8715784215784216,
+        "median_ms_per_query": 5.29957599997033,
+        "p95_ms_per_query": 25.92041749994678,
+        "precision": 0.8644234553325462,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8785048285048286,
+        "median_ms_per_query": 5.2922259999377275,
+        "p95_ms_per_query": 26.98098400003346,
+        "precision": 0.9477567886658796,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8672494172494173,
+        "median_ms_per_query": 5.272465999951237,
+        "p95_ms_per_query": 26.773747999982334,
+        "precision": 0.9347402597402599,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8785048285048286,
+        "median_ms_per_query": 5.132709999998042,
+        "p95_ms_per_query": 26.086012499945355,
+        "precision": 0.9477567886658796,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8780701754385966,
+        "median_ms_per_query": 5.259706999822811,
+        "p95_ms_per_query": 26.580813000009584,
+        "precision": 0.9558080808080809,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8482416706100917,
+        "median_ms_per_query": 5.249381999874458,
+        "p95_ms_per_query": 26.222698999845306,
+        "precision": 0.9567099567099567,
+        "recall": 0.8075757575757575,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8588078588078588,
+        "median_ms_per_query": 7.663237000087975,
+        "p95_ms_per_query": 27.48841300001459,
+        "precision": 0.9665584415584416,
+        "recall": 0.8166666666666665,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8451714951714951,
+        "median_ms_per_query": 6.342856000173924,
+        "p95_ms_per_query": 41.47682100017391,
+        "precision": 0.8779220779220779,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8785048285048286,
+        "median_ms_per_query": 5.3829700000278535,
+        "p95_ms_per_query": 27.04620099996191,
+        "precision": 0.9477567886658796,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8785048285048286,
+        "median_ms_per_query": 5.533512000056362,
+        "p95_ms_per_query": 27.499490000082005,
+        "precision": 0.9477567886658796,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8495670995670995,
+        "median_ms_per_query": 5.554803000222819,
+        "p95_ms_per_query": 26.927129499995317,
+        "precision": 0.9524793388429752,
+        "recall": 0.8075757575757575,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8444139194139194,
+        "median_ms_per_query": 5.20835099996475,
+        "p95_ms_per_query": 26.4741610000101,
+        "precision": 0.9486291486291486,
+        "recall": 0.8075757575757575,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8596053069737281,
+        "median_ms_per_query": 5.447696000146607,
+        "p95_ms_per_query": 26.65991000003487,
+        "precision": 0.976911976911977,
+        "recall": 0.8075757575757575,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8066844919786097,
+        "median_ms_per_query": 5.318563999935577,
+        "p95_ms_per_query": 27.22294149998561,
+        "precision": 0.9318181818181818,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8164247517188694,
+        "median_ms_per_query": 5.160231000218118,
+        "p95_ms_per_query": 26.068591500006733,
+        "precision": 0.9545454545454546,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8132594959220346,
+        "median_ms_per_query": 5.480071999954816,
+        "p95_ms_per_query": 26.130574000035267,
+        "precision": 0.9496392496392496,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8771377745061956,
+        "median_ms_per_query": 5.509046000042872,
+        "p95_ms_per_query": 27.503776999992624,
+        "precision": 0.9541847041847042,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8733100233100234,
+        "median_ms_per_query": 5.192879000105677,
+        "p95_ms_per_query": 26.668042000096648,
+        "precision": 0.9461038961038962,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8733100233100234,
+        "median_ms_per_query": 5.649353000080737,
+        "p95_ms_per_query": 28.659933499966428,
+        "precision": 0.9461038961038962,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8227272727272728,
+        "median_ms_per_query": 5.254639999975552,
+        "p95_ms_per_query": 28.329460500003734,
+        "precision": 0.9590909090909091,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7936974789915966,
+        "median_ms_per_query": 5.200750000085463,
+        "p95_ms_per_query": 29.158345000041663,
+        "precision": 0.9181818181818181,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8132594959220346,
+        "median_ms_per_query": 5.2623210001456755,
+        "p95_ms_per_query": 25.482576000058543,
+        "precision": 0.9496392496392496,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8066844919786097,
+        "median_ms_per_query": 5.405653000025268,
+        "p95_ms_per_query": 26.580853000155003,
+        "precision": 0.9318181818181818,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7896867838044308,
+        "median_ms_per_query": 5.375577999984671,
+        "p95_ms_per_query": 27.211770500002785,
+        "precision": 0.9132231404958677,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7519560934421615,
+        "median_ms_per_query": 5.456608000031338,
+        "p95_ms_per_query": 26.0935694999489,
+        "precision": 0.9213039485766757,
+        "recall": 0.7166666666666667,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8365800865800866,
+        "median_ms_per_query": 5.280328000026202,
+        "p95_ms_per_query": 25.95397749996664,
+        "precision": 0.9297520661157024,
+        "recall": 0.8075757575757575,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8497835497835499,
+        "median_ms_per_query": 5.377742000064245,
+        "p95_ms_per_query": 26.686349499982498,
+        "precision": 0.9590909090909091,
+        "recall": 0.8075757575757575,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8498650472334682,
+        "median_ms_per_query": 5.260017999944466,
+        "p95_ms_per_query": 25.846658999967076,
+        "precision": 0.9541847041847042,
+        "recall": 0.8075757575757575,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7996914849856028,
+        "median_ms_per_query": 5.451480000147058,
+        "p95_ms_per_query": 27.15096099996117,
+        "precision": 0.9188311688311689,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7481283422459893,
+        "median_ms_per_query": 5.358844000056706,
+        "p95_ms_per_query": 26.774163999903067,
+        "precision": 0.9132231404958677,
+        "recall": 0.7166666666666667,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7483910310535697,
+        "median_ms_per_query": 5.291133000127957,
+        "p95_ms_per_query": 26.702517999979136,
+        "precision": 0.9171717171717172,
+        "recall": 0.7166666666666667,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 5,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7332616785706031,
+        "median_ms_per_query": 5.22833099989839,
+        "p95_ms_per_query": 28.662069500001053,
+        "precision": 0.8922335240517058,
+        "recall": 0.7166666666666667,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 5,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.681313626622551,
+        "median_ms_per_query": 5.471990999922127,
+        "p95_ms_per_query": 27.312138500064975,
+        "precision": 0.826117821572367,
+        "recall": 0.7166666666666667,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 5,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7370894297667753,
+        "median_ms_per_query": 5.305605000103242,
+        "p95_ms_per_query": 27.584801000102743,
+        "precision": 0.900314332132514,
+        "recall": 0.7166666666666667,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 6.962681999993947,
+        "p95_ms_per_query": 31.726531999993313,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.21984199981307,
+        "p95_ms_per_query": 33.23047300000326,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.075818999965122,
+        "p95_ms_per_query": 30.767015999913383,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.366308000200661,
+        "p95_ms_per_query": 38.4599359999811,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.3812509999697795,
+        "p95_ms_per_query": 32.90509300006761,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.799598000019614,
+        "p95_ms_per_query": 32.90903899994646,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.605850999880204,
+        "p95_ms_per_query": 31.42955349994736,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.354720999956044,
+        "p95_ms_per_query": 33.549694499924954,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.354390000045896,
+        "p95_ms_per_query": 32.54324349995841,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8715784215784216,
+        "median_ms_per_query": 7.699790000060602,
+        "p95_ms_per_query": 35.04457150006601,
+        "precision": 0.8644234553325462,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8746087246087246,
+        "median_ms_per_query": 7.463080999968952,
+        "p95_ms_per_query": 31.30562549995375,
+        "precision": 0.8682113341204251,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8746087246087246,
+        "median_ms_per_query": 7.151390999979412,
+        "p95_ms_per_query": 30.763504999981706,
+        "precision": 0.8682113341204251,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8769896769896771,
+        "median_ms_per_query": 7.0795750000343105,
+        "p95_ms_per_query": 31.08886099994379,
+        "precision": 0.9574675324675326,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8821844821844823,
+        "median_ms_per_query": 7.397945000093387,
+        "p95_ms_per_query": 33.33109700008663,
+        "precision": 0.959120425029516,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8821844821844823,
+        "median_ms_per_query": 6.86179300009826,
+        "p95_ms_per_query": 32.46847299999445,
+        "precision": 0.959120425029516,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8769896769896771,
+        "median_ms_per_query": 7.1237900001506205,
+        "p95_ms_per_query": 31.706874999940737,
+        "precision": 0.9574675324675326,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8850704850704851,
+        "median_ms_per_query": 7.159011999874565,
+        "p95_ms_per_query": 32.384413500039955,
+        "precision": 0.9756493506493507,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8821844821844823,
+        "median_ms_per_query": 6.790327000089746,
+        "p95_ms_per_query": 31.017850500006716,
+        "precision": 0.959120425029516,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.9088078588078587,
+        "median_ms_per_query": 6.991845000129615,
+        "p95_ms_per_query": 31.57872350004709,
+        "precision": 0.9477567886658796,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8724442224442225,
+        "median_ms_per_query": 7.506616000000577,
+        "p95_ms_per_query": 32.030540999926416,
+        "precision": 0.9363931523022433,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.9027472527472526,
+        "median_ms_per_query": 7.014729000047737,
+        "p95_ms_per_query": 30.503556000098797,
+        "precision": 0.9363931523022433,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8367044719985895,
+        "median_ms_per_query": 7.217618999902697,
+        "p95_ms_per_query": 31.28740349995951,
+        "precision": 0.9415584415584416,
+        "recall": 0.7924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8494644244644245,
+        "median_ms_per_query": 6.947658999933992,
+        "p95_ms_per_query": 32.41821849996995,
+        "precision": 0.9668109668109669,
+        "recall": 0.7924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8465784215784216,
+        "median_ms_per_query": 7.016272000100798,
+        "p95_ms_per_query": 30.904172999953516,
+        "precision": 0.950282041191132,
+        "recall": 0.8015151515151515,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8059685412626589,
+        "median_ms_per_query": 7.4800260001666175,
+        "p95_ms_per_query": 32.294751499989616,
+        "precision": 0.9349468713105078,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8175125528066706,
+        "median_ms_per_query": 8.017418999997972,
+        "p95_ms_per_query": 31.63521299995864,
+        "precision": 0.9597402597402597,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8146265499206677,
+        "median_ms_per_query": 6.978144999948199,
+        "p95_ms_per_query": 30.19190100008018,
+        "precision": 0.9432113341204252,
+        "recall": 0.7712121212121211,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8733100233100234,
+        "median_ms_per_query": 7.1360379999987344,
+        "p95_ms_per_query": 32.697605999942425,
+        "precision": 0.9461038961038962,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8821844821844823,
+        "median_ms_per_query": 6.991904999949838,
+        "p95_ms_per_query": 30.8877960000018,
+        "precision": 0.959120425029516,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8724442224442225,
+        "median_ms_per_query": 6.942431999959808,
+        "p95_ms_per_query": 30.300741000019116,
+        "precision": 0.9363931523022433,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7886525239466415,
+        "median_ms_per_query": 7.252971000070829,
+        "p95_ms_per_query": 30.21566100005657,
+        "precision": 0.9349468713105078,
+        "recall": 0.7393939393939394,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8017782870724048,
+        "median_ms_per_query": 6.803687000001446,
+        "p95_ms_per_query": 30.378185999893503,
+        "precision": 0.9363636363636363,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8017782870724048,
+        "median_ms_per_query": 6.95237700006146,
+        "p95_ms_per_query": 31.075826500000403,
+        "precision": 0.9363636363636363,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7151830110034445,
+        "median_ms_per_query": 6.947821000039767,
+        "p95_ms_per_query": 31.607941999936884,
+        "precision": 0.8626191989828353,
+        "recall": 0.7166666666666667,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6964537010976639,
+        "median_ms_per_query": 7.324787000015931,
+        "p95_ms_per_query": 36.03452900006232,
+        "precision": 0.8824539097266371,
+        "recall": 0.6848484848484848,
+        "worst_query_f1": 0.33333333333333337
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7469587516027144,
+        "median_ms_per_query": 7.050080999988495,
+        "p95_ms_per_query": 31.328919499969743,
+        "precision": 0.8824539097266371,
+        "recall": 0.7393939393939394,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.7962282815223993,
+        "median_ms_per_query": 7.09268500008875,
+        "p95_ms_per_query": 34.820401499928266,
+        "precision": 0.912219598583235,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8755143978828189,
+        "median_ms_per_query": 7.278727999846524,
+        "p95_ms_per_query": 30.95925900004204,
+        "precision": 0.9567099567099567,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8722023074964251,
+        "median_ms_per_query": 7.254393000039272,
+        "p95_ms_per_query": 34.00141650013211,
+        "precision": 0.9432113341204252,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7044174607642101,
+        "median_ms_per_query": 6.979967999996006,
+        "p95_ms_per_query": 31.230764999918392,
+        "precision": 0.8500317863954229,
+        "recall": 0.7166666666666667,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.6584371721720441,
+        "median_ms_per_query": 6.990362999886202,
+        "p95_ms_per_query": 31.08880549996229,
+        "precision": 0.8824539097266371,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.6548721097834523,
+        "median_ms_per_query": 6.9464579999021225,
+        "p95_ms_per_query": 30.292584999983774,
+        "precision": 0.8783216783216784,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.00778899999932,
+        "p95_ms_per_query": 30.326635000051283,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.018064000021695,
+        "p95_ms_per_query": 30.808802000024116,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 6.944685999997091,
+        "p95_ms_per_query": 31.978348500047105,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.7826585179526355,
+        "median_ms_per_query": 7.006907999993928,
+        "p95_ms_per_query": 31.37767700002314,
+        "precision": 0.925206611570248,
+        "recall": 0.7393939393939394,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.7936974789915966,
+        "median_ms_per_query": 7.13185099994007,
+        "p95_ms_per_query": 31.944779500122422,
+        "precision": 0.9181818181818181,
+        "recall": 0.7621212121212121,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8036148343634975,
+        "median_ms_per_query": 7.0496109999567125,
+        "p95_ms_per_query": 32.284595999954036,
+        "precision": 0.9212121212121211,
+        "recall": 0.7803030303030302,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.086684999876525,
+        "p95_ms_per_query": 30.224784500092028,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 6.994729000098232,
+        "p95_ms_per_query": 31.23807100007525,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 6.940268999869659,
+        "p95_ms_per_query": 31.055285999968874,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 10,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.154766000212476,
+        "p95_ms_per_query": 30.333995999967556,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 10,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 6.969572000116386,
+        "p95_ms_per_query": 32.764534999955686,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 10,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.462649999979476,
+        "p95_ms_per_query": 30.275729499976478,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.756192999977429,
+        "p95_ms_per_query": 38.294731499945556,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.504503000063778,
+        "p95_ms_per_query": 39.01154050004152,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.529760000124952,
+        "p95_ms_per_query": 38.98267750003015,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.6204530000723025,
+        "p95_ms_per_query": 39.37354400000004,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.553685999937443,
+        "p95_ms_per_query": 39.70086849994914,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.584470999972837,
+        "p95_ms_per_query": 38.130324500002644,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.64238499982639,
+        "p95_ms_per_query": 39.58673000011004,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.533706000003804,
+        "p95_ms_per_query": 40.24942299997747,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.953464999900461,
+        "p95_ms_per_query": 42.620408999937354,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8958208458208458,
+        "median_ms_per_query": 7.8536189998885675,
+        "p95_ms_per_query": 40.807552499927624,
+        "precision": 0.9250295159386069,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 8.110938000072565,
+        "p95_ms_per_query": 41.477266500010046,
+        "precision": 0.9136658795749706,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.726080000111324,
+        "p95_ms_per_query": 43.75589150004089,
+        "precision": 0.9136658795749706,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8557775557775558,
+        "median_ms_per_query": 7.573174000071958,
+        "p95_ms_per_query": 39.33875799998532,
+        "precision": 0.9665584415584416,
+        "recall": 0.8015151515151515,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 8.048866000081034,
+        "p95_ms_per_query": 43.118387500044264,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8421411921411921,
+        "median_ms_per_query": 8.857158999944659,
+        "p95_ms_per_query": 44.393072499929076,
+        "precision": 0.9756493506493507,
+        "recall": 0.7742424242424242,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 8.43602700001611,
+        "p95_ms_per_query": 42.01700400005848,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 7.947016000116491,
+        "p95_ms_per_query": 42.52980100000059,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 7.661333999976705,
+        "p95_ms_per_query": 42.30191399994965,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.9171810645494856,
+        "median_ms_per_query": 8.840765000059037,
+        "p95_ms_per_query": 43.6889479999536,
+        "precision": 0.976911976911977,
+        "recall": 0.8833333333333333,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8821844821844823,
+        "median_ms_per_query": 7.8285609999966255,
+        "p95_ms_per_query": 39.44049350002388,
+        "precision": 0.959120425029516,
+        "recall": 0.8469696969696969,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.9124875124875125,
+        "median_ms_per_query": 7.6615949999450095,
+        "p95_ms_per_query": 39.81278349999684,
+        "precision": 0.959120425029516,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8072672425613603,
+        "median_ms_per_query": 7.727820999889445,
+        "p95_ms_per_query": 40.76958650000506,
+        "precision": 0.9597402597402597,
+        "recall": 0.7424242424242423,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8106143856143856,
+        "median_ms_per_query": 8.051820999980919,
+        "p95_ms_per_query": 39.2977774999963,
+        "precision": 0.9668109668109669,
+        "recall": 0.746969696969697,
+        "worst_query_f1": 0.4615384615384615
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8119463869463869,
+        "median_ms_per_query": 8.209252999904493,
+        "p95_ms_per_query": 43.24911049991442,
+        "precision": 0.9668109668109669,
+        "recall": 0.7424242424242423,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7254490607431785,
+        "median_ms_per_query": 7.655466000187516,
+        "p95_ms_per_query": 41.73598900013076,
+        "precision": 0.9597402597402597,
+        "recall": 0.6621212121212121,
+        "worst_query_f1": 0.33333333333333337
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7116749560599828,
+        "median_ms_per_query": 7.6775779998570215,
+        "p95_ms_per_query": 39.23593599995456,
+        "precision": 0.9597402597402597,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7116749560599828,
+        "median_ms_per_query": 7.54762499991557,
+        "p95_ms_per_query": 37.572319499986406,
+        "precision": 0.9597402597402597,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8608280608280608,
+        "median_ms_per_query": 7.756254000014451,
+        "p95_ms_per_query": 41.19963649998226,
+        "precision": 0.987012987012987,
+        "recall": 0.7924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8421411921411921,
+        "median_ms_per_query": 7.907316999990144,
+        "p95_ms_per_query": 40.02707450001708,
+        "precision": 0.9756493506493507,
+        "recall": 0.7742424242424242,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8850704850704851,
+        "median_ms_per_query": 7.740520999959699,
+        "p95_ms_per_query": 40.12423400001808,
+        "precision": 0.9756493506493507,
+        "recall": 0.8378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7116749560599828,
+        "median_ms_per_query": 7.754220999913741,
+        "p95_ms_per_query": 38.53523700001915,
+        "precision": 0.9597402597402597,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.695940690325717,
+        "median_ms_per_query": 8.143597000071168,
+        "p95_ms_per_query": 39.17392050004764,
+        "precision": 0.9363636363636363,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7116749560599828,
+        "median_ms_per_query": 7.854059000010238,
+        "p95_ms_per_query": 40.72157049984071,
+        "precision": 0.9597402597402597,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6548721097834523,
+        "median_ms_per_query": 7.501127000068664,
+        "p95_ms_per_query": 40.84772700002759,
+        "precision": 0.8783216783216784,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6584371721720441,
+        "median_ms_per_query": 7.925714000066364,
+        "p95_ms_per_query": 41.17530100006661,
+        "precision": 0.8824539097266371,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6584371721720441,
+        "median_ms_per_query": 7.4957589999939955,
+        "p95_ms_per_query": 42.90810399993461,
+        "precision": 0.8824539097266371,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8001965354906532,
+        "median_ms_per_query": 7.975256999998237,
+        "p95_ms_per_query": 42.35193299996354,
+        "precision": 0.9597402597402597,
+        "recall": 0.7393939393939394,
+        "worst_query_f1": 0.5
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8206043956043956,
+        "median_ms_per_query": 7.470382000065001,
+        "p95_ms_per_query": 43.631216999983735,
+        "precision": 0.9668109668109669,
+        "recall": 0.756060606060606,
+        "worst_query_f1": 0.5714285714285715
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8321590174531351,
+        "median_ms_per_query": 8.051008999927944,
+        "p95_ms_per_query": 41.49527799995667,
+        "precision": 0.9597402597402597,
+        "recall": 0.7742424242424242,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.6516823171199755,
+        "median_ms_per_query": 7.665180000003602,
+        "p95_ms_per_query": 41.213697500097624,
+        "precision": 0.874825174825175,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.6584371721720441,
+        "median_ms_per_query": 7.521175999954721,
+        "p95_ms_per_query": 42.61773500002164,
+        "precision": 0.8824539097266371,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.6548721097834523,
+        "median_ms_per_query": 7.77351900001122,
+        "p95_ms_per_query": 42.33090749994517,
+        "precision": 0.8783216783216784,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 8.601051999903575,
+        "p95_ms_per_query": 44.178495999972256,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.518153000091843,
+        "p95_ms_per_query": 43.36559549994945,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.7870899999652465,
+        "p95_ms_per_query": 46.36969649993716,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.7056809500659768,
+        "median_ms_per_query": 7.625570999834963,
+        "p95_ms_per_query": 42.403759000080754,
+        "precision": 0.95,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.695940690325717,
+        "median_ms_per_query": 7.568316000060804,
+        "p95_ms_per_query": 39.10071699999662,
+        "precision": 0.9363636363636363,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.695940690325717,
+        "median_ms_per_query": 7.644799999980023,
+        "p95_ms_per_query": 42.126244999849405,
+        "precision": 0.9363636363636363,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.753720999971847,
+        "p95_ms_per_query": 39.04385300006652,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 8.034694999878411,
+        "p95_ms_per_query": 41.68812350008011,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.535268000083306,
+        "p95_ms_per_query": 42.52243999985694,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 20,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.629986999972971,
+        "p95_ms_per_query": 40.694074999919394,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 20,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6194394289332057,
+        "median_ms_per_query": 7.756022999956258,
+        "p95_ms_per_query": 43.08029849994455,
+        "precision": 0.7337650130905263,
+        "recall": 0.7348484848484848,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 20,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6194394289332057,
+        "median_ms_per_query": 7.761170999856404,
+        "p95_ms_per_query": 41.08058050007912,
+        "precision": 0.7337650130905263,
+        "recall": 0.7348484848484848,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 8.521264000137307,
+        "p95_ms_per_query": 50.30489800003579,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 8.5872610000024,
+        "p95_ms_per_query": 50.338456500071516,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.6035879999380995,
+        "p95_ms_per_query": 49.032092500056024,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 8.201641999903586,
+        "p95_ms_per_query": 48.87363850002657,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.71690600004149,
+        "p95_ms_per_query": 48.583010000129434,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.5070660000164935,
+        "p95_ms_per_query": 50.06098149999616,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.647443999985626,
+        "p95_ms_per_query": 47.08653949990094,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.694532999948933,
+        "p95_ms_per_query": 48.54871850000109,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 7.9147379999540135,
+        "p95_ms_per_query": 48.11134249996485,
+        "precision": 0.8682113341204251,
+        "recall": 0.9378787878787879,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8958208458208458,
+        "median_ms_per_query": 7.511291999890091,
+        "p95_ms_per_query": 47.25968000002467,
+        "precision": 0.9250295159386069,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8995004995004995,
+        "median_ms_per_query": 7.646492000048966,
+        "p95_ms_per_query": 46.39494250011467,
+        "precision": 0.9363931523022433,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8897602397602398,
+        "median_ms_per_query": 8.046673000080773,
+        "p95_ms_per_query": 46.95507999997517,
+        "precision": 0.9136658795749706,
+        "recall": 0.8924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 7.502649999878486,
+        "p95_ms_per_query": 47.793548499839744,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 7.972272999950292,
+        "p95_ms_per_query": 48.07650100008232,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 7.717256999967503,
+        "p95_ms_per_query": 48.67042850003145,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 7.85191499994653,
+        "p95_ms_per_query": 47.17619150005703,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 7.672349999893413,
+        "p95_ms_per_query": 46.40479799991226,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.1,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.8345654345654345,
+        "median_ms_per_query": 7.524031000002651,
+        "p95_ms_per_query": 49.597867499983295,
+        "precision": 0.9756493506493507,
+        "recall": 0.7651515151515151,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.9171810645494856,
+        "median_ms_per_query": 7.6785689998359885,
+        "p95_ms_per_query": 47.820402999946054,
+        "precision": 0.976911976911977,
+        "recall": 0.8833333333333333,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.874969474969475,
+        "median_ms_per_query": 7.599052000159645,
+        "p95_ms_per_query": 91.46638350011926,
+        "precision": 0.9642857142857143,
+        "recall": 0.8287878787878789,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.9111204584888796,
+        "median_ms_per_query": 8.335639000051742,
+        "p95_ms_per_query": 51.29206499987049,
+        "precision": 0.9655483405483406,
+        "recall": 0.8833333333333333,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7527217880159056,
+        "median_ms_per_query": 7.79472999988684,
+        "p95_ms_per_query": 47.13842649994149,
+        "precision": 0.9597402597402597,
+        "recall": 0.6924242424242424,
+        "worst_query_f1": 0.33333333333333337
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7574009324009325,
+        "median_ms_per_query": 7.694031999790241,
+        "p95_ms_per_query": 48.65761400003521,
+        "precision": 0.9668109668109669,
+        "recall": 0.6924242424242424,
+        "worst_query_f1": 0.33333333333333337
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7574009324009325,
+        "median_ms_per_query": 7.5818469999830995,
+        "p95_ms_per_query": 48.939800999960426,
+        "precision": 0.9668109668109669,
+        "recall": 0.6924242424242424,
+        "worst_query_f1": 0.33333333333333337
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7116749560599828,
+        "median_ms_per_query": 7.715282999924966,
+        "p95_ms_per_query": 60.0318155001105,
+        "precision": 0.9597402597402597,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7116749560599828,
+        "median_ms_per_query": 7.728633000169793,
+        "p95_ms_per_query": 52.02847699990798,
+        "precision": 0.9597402597402597,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.25,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.7116749560599828,
+        "median_ms_per_query": 7.8405890001249645,
+        "p95_ms_per_query": 50.54222799992658,
+        "precision": 0.9597402597402597,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8608280608280608,
+        "median_ms_per_query": 7.692088999874613,
+        "p95_ms_per_query": 46.86867800012351,
+        "precision": 0.987012987012987,
+        "recall": 0.7924242424242425,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8421411921411921,
+        "median_ms_per_query": 8.11379200013107,
+        "p95_ms_per_query": 58.06607600004554,
+        "precision": 0.9756493506493507,
+        "recall": 0.7742424242424242,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.8421411921411921,
+        "median_ms_per_query": 8.96591100013211,
+        "p95_ms_per_query": 47.38107449998097,
+        "precision": 0.9756493506493507,
+        "recall": 0.7742424242424242,
+        "worst_query_f1": 0.6666666666666666
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7116749560599828,
+        "median_ms_per_query": 7.918573999859291,
+        "p95_ms_per_query": 48.89648750008746,
+        "precision": 0.9597402597402597,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.695940690325717,
+        "median_ms_per_query": 8.37155299996084,
+        "p95_ms_per_query": 46.17656150003313,
+        "precision": 0.9363636363636363,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.7116749560599828,
+        "median_ms_per_query": 7.540254999867102,
+        "p95_ms_per_query": 53.38463049997699,
+        "precision": 0.9597402597402597,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6548721097834523,
+        "median_ms_per_query": 7.736023999996178,
+        "p95_ms_per_query": 48.612232499976926,
+        "precision": 0.8783216783216784,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6584371721720441,
+        "median_ms_per_query": 7.698648000086905,
+        "p95_ms_per_query": 48.54060050001863,
+        "precision": 0.8824539097266371,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 0.5,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6584371721720441,
+        "median_ms_per_query": 8.205146999898716,
+        "p95_ms_per_query": 47.6288024999576,
+        "precision": 0.8824539097266371,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.7254490607431785,
+        "median_ms_per_query": 7.605000000012296,
+        "p95_ms_per_query": 47.62946349990216,
+        "precision": 0.9597402597402597,
+        "recall": 0.6621212121212121,
+        "worst_query_f1": 0.33333333333333337
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.7851852692761784,
+        "median_ms_per_query": 8.202912999877299,
+        "p95_ms_per_query": 52.16795799992724,
+        "precision": 0.9668109668109669,
+        "recall": 0.7287878787878787,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.7389476833327101,
+        "median_ms_per_query": 7.51372500008074,
+        "p95_ms_per_query": 50.401351499886005,
+        "precision": 0.9597402597402597,
+        "recall": 0.6833333333333333,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.6516823171199755,
+        "median_ms_per_query": 7.691538000017317,
+        "p95_ms_per_query": 47.56133099999715,
+        "precision": 0.874825174825175,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.6584371721720441,
+        "median_ms_per_query": 8.41413500006638,
+        "p95_ms_per_query": 50.95061599990913,
+        "precision": 0.8824539097266371,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.6548721097834523,
+        "median_ms_per_query": 8.32040699992831,
+        "p95_ms_per_query": 51.62917799998468,
+        "precision": 0.8783216783216784,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.631650000121226,
+        "p95_ms_per_query": 49.42097699995429,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.775403000096048,
+        "p95_ms_per_query": 53.17387449997568,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 1.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 8.02008300001944,
+        "p95_ms_per_query": 47.70087149995561,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.7056809500659768,
+        "median_ms_per_query": 8.300477999910072,
+        "p95_ms_per_query": 55.48865950004256,
+        "precision": 0.95,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.695940690325717,
+        "median_ms_per_query": 8.301158999984182,
+        "p95_ms_per_query": 50.97837200003141,
+        "precision": 0.9363636363636363,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 0.5
+      },
+      "validation": {
+        "f1": 0.695940690325717,
+        "median_ms_per_query": 7.639171000164424,
+        "p95_ms_per_query": 51.047643999936554,
+        "precision": 0.9363636363636363,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 8.292425000036019,
+        "p95_ms_per_query": 50.78969349995077,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 7.771616000127324,
+        "p95_ms_per_query": 54.26058799992006,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 1.0
+      },
+      "validation": {
+        "f1": 0.5916224565486059,
+        "median_ms_per_query": 8.48251699994762,
+        "p95_ms_per_query": 49.73660800010293,
+        "precision": 0.7953485908031364,
+        "recall": 0.6530303030303031,
+        "worst_query_f1": 0.18181818181818182
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "part",
+        "k": 50,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6194394289332057,
+        "median_ms_per_query": 7.639752999921257,
+        "p95_ms_per_query": 45.24917650007865,
+        "precision": 0.7337650130905263,
+        "recall": 0.7348484848484848,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "context",
+        "k": 50,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6194394289332057,
+        "median_ms_per_query": 7.7057089999925665,
+        "p95_ms_per_query": 45.590580499947464,
+        "precision": 0.7337650130905263,
+        "recall": 0.7348484848484848,
+        "worst_query_f1": 0.4
+      }
+    },
+    {
+      "config": {
+        "edge_feature": "combined",
+        "k": 50,
+        "pairwise_lambda": 2.0,
+        "sigma_factor": 2.0
+      },
+      "validation": {
+        "f1": 0.6194394289332057,
+        "median_ms_per_query": 7.540615999914735,
+        "p95_ms_per_query": 50.97978900005273,
+        "precision": 0.7337650130905263,
+        "recall": 0.7348484848484848,
+        "worst_query_f1": 0.4
+      }
+    }
+  ]
+}

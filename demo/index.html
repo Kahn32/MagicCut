@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MagicCut — interactive material grouping</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Uncertainty-aware material grouping</p>
+      <h1>MagicCut</h1>
+      <p>Select one rendered part, inspect the proposed group, and answer the recommended yes/no clarification.</p>
+    </header>
+    <section class="controls" aria-label="Demo controls">
+      <label>Mesh <select id="mesh"></select></label>
+      <label>Query part <select id="query"></select></label>
+      <button id="run">Run grouping</button>
+      <button id="reset" class="secondary" disabled>Reset</button>
+    </section>
+    <section class="status" aria-live="polite">
+      <div><span>Clicks</span><strong id="clicks">0</strong></div>
+      <div><span>Inference</span><strong id="latency">—</strong></div>
+      <div><span>Next question</span><strong id="recommendation">—</strong></div>
+      <div><span>Confidence</span><strong id="confidence">—</strong></div>
+    </section>
+    <section class="feedback" id="feedback" hidden>
+      <p>Should the highlighted part share the query material?</p>
+      <button id="yes">Yes</button><button id="no" class="danger">No</button>
+    </section>
+    <section class="legend" aria-label="Colour legend">
+      <span class="query-key">Query</span><span class="positive-key">Selected</span>
+      <span class="uncertain-key">Uncertain</span><span class="negative-key">Not selected</span>
+      <span class="recommended-key">Recommended clarification</span>
+    </section>
+    <p id="message" role="status">Loading benchmark…</p>
+    <section id="parts" class="parts" aria-label="Mesh parts"></section>
+  </main>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

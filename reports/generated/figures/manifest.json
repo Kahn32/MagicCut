@@ -1,0 +1,96 @@
+{
+  "failure_example": {
+    "f1_delta": -0.998361532784464,
+    "query": 2485,
+    "uid": "1c1899106e9d41589086dbe752f7d24a"
+  },
+  "files": [
+    {
+      "path": "reports/generated/figures/method_diagram.png",
+      "sha256": "1a732258a086c275fdacc6f52bfb3c0a7aa32e85fe2a22092bcd32be9e32bcf9"
+    },
+    {
+      "path": "reports/generated/figures/method_diagram.pdf",
+      "sha256": "315b75f1fc6632058f45ce9d205390e262035cefe52baa00bf55bbe486a4d859"
+    },
+    {
+      "path": "reports/generated/figures/precision_recall.png",
+      "sha256": "dcf084ba03e17a111849178c5e65df9f0ffebd73c74a554e72432e83efcb7173"
+    },
+    {
+      "path": "reports/generated/figures/precision_recall.pdf",
+      "sha256": "becb24f5254d232fefb24558d58e842e544056069627f9a4d3a593c6f6cf2b9c"
+    },
+    {
+      "path": "reports/generated/figures/f1_versus_clicks.png",
+      "sha256": "7375e9a5deb56ec21807e708211b52f2c9db0393417e4e2fe7324883e1e25127"
+    },
+    {
+      "path": "reports/generated/figures/f1_versus_clicks.pdf",
+      "sha256": "0b7e4071648aa2af11abe2e5f4fc1818868762897b0aeb1875ac68a9c34d50d4"
+    },
+    {
+      "path": "reports/generated/figures/calibration.png",
+      "sha256": "dd2f8a9607a7fd696f1838676863024792a16055d2bdceefd7d4311c82dd2370"
+    },
+    {
+      "path": "reports/generated/figures/calibration.pdf",
+      "sha256": "20b88d714193c0abca6b8b5116df1ff95aeba526c4ffa300e7b2f9ce26dfa5d8"
+    },
+    {
+      "path": "reports/generated/figures/risk_coverage.png",
+      "sha256": "a7aeb485c5ab7c5e3e54ddd3f2884d050b3c9a3060e3461cdbcfe0149af0f307"
+    },
+    {
+      "path": "reports/generated/figures/risk_coverage.pdf",
+      "sha256": "a2076133c72fa0a930d3ca199f08a2f4af5c1723870e003d5ade646ee3bea6a5"
+    },
+    {
+      "path": "reports/generated/figures/graph_visualization.png",
+      "sha256": "eace3707f14ecd41990b548693c5ec4e23f3a4b77fac67459b6a0f64d7940862"
+    },
+    {
+      "path": "reports/generated/figures/graph_visualization.pdf",
+      "sha256": "036d4545af9ee6da86c464538a56beba9299d48752ae0383d1b4eccd45c3e215"
+    },
+    {
+      "path": "reports/generated/figures/success_example.png",
+      "sha256": "b124d8bf91a09f7e3a7c65b7b951b6c065359677569dbb0183c29bd2bbf17aaf"
+    },
+    {
+      "path": "reports/generated/figures/success_example.pdf",
+      "sha256": "71bce41ca68cd5c4e42dbd82ba9d79030b7b209677595b9119a97700fc73cb12"
+    },
+    {
+      "path": "reports/generated/figures/failure_example.png",
+      "sha256": "81db12d0d314db093ecbed78bf64f880acc88ef435db57057b2446fe5717becb"
+    },
+    {
+      "path": "reports/generated/figures/failure_example.pdf",
+      "sha256": "4c4d6fbe720b593c0b6b14dd7a1e7215edfe3f66cc32b9e06e813b88f7c8da5f"
+    }
+  ],
+  "heldout_query_count": 230,
+  "source_raw_results_sha256": "ad78a55b9faebce7940bc2687a499549b1d68f988d9ca965295146abc53129bf",
+  "style": {
+    "colors": {
+      "active": "#15956A",
+      "adaptive": "#2F7DBD",
+      "background": "#F7F5EF",
+      "calibrated": "#8A5CB7",
+      "false_negative": "#F2C14E",
+      "false_positive": "#D64B4B",
+      "ink": "#18212A",
+      "magiccut": "#E0792D",
+      "mmw": "#6B7280",
+      "target": "#15956A"
+    },
+    "font": "DejaVu Sans",
+    "png_dpi": 320
+  },
+  "success_example": {
+    "f1_delta": 0.8,
+    "query": 189,
+    "uid": "8186e08947664545be29caae9c9ff01c"
+  }
+}

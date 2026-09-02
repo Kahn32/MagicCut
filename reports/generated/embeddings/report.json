@@ -1,0 +1,43 @@
+{
+  "all_100_complete": true,
+  "batch_equivalence_audit": {
+    "batch_128_peak_rss_mib": 11236.29296875,
+    "batch_128_seconds_on_largest_audit": 146.96625862900055,
+    "batch_96_seconds_on_largest_audit": 159.60094874899914,
+    "largest_equivalence_mesh_representatives": 183,
+    "max_absolute_embedding_difference": 0.0,
+    "selected_batch_size": 128,
+    "selection_reason": "bit-identical FP32 output and lower tail runtime within the measured memory ceiling",
+    "tested_batch_sizes": [
+      8,
+      16,
+      32,
+      64,
+      96,
+      128
+    ]
+  },
+  "batch_policy": {
+    "reason": "batch 64 is faster on smaller CPU workloads; batch 128 is faster on the large tail; outputs are bit-identical",
+    "representatives_at_least_128": 128,
+    "representatives_below_128": 64
+  },
+  "batch_size_current": 128,
+  "cache_bytes": 108656611,
+  "checkpoint_sha256": "d86f28e222584d25be3d0d5017de60a88bf45b574d2bf5c73e12010ecfeefe97",
+  "completed_meshes": 100,
+  "dataset_revision": "52b0489beef04a81453944dba4d3c098fbaffe60",
+  "device": "cpu",
+  "dtype": "float32",
+  "failures": [],
+  "last_run_seconds": 2.183091163635254,
+  "model": {
+    "backbone_name": "vit_small_patch14_dinov2.lvd142m",
+    "missing_keys": [],
+    "strict_load": true,
+    "tensor_count": 179,
+    "unexpected_keys": []
+  },
+  "representatives_cached": 25348,
+  "torch_threads": 9
+}
