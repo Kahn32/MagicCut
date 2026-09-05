@@ -2,7 +2,7 @@
 
 An interactive computer vision project for grouping parts of a 3D object that should share the same material.
 
-![MagicCut interaction](reports/generated/presentation/demo.gif)
+![MagicCut interaction](assets/demo.gif)
 
 ## Why this problem matters
 
@@ -27,9 +27,22 @@ I started from the public Material Magic Wand model and benchmark, then built a 
 
 The project combines computer vision, graph algorithms, uncertainty estimation, active interaction, statistical evaluation, and reproducible ML engineering. The released encoder remains frozen, so the experiment measures the value of the new inference and feedback system rather than additional model training.
 
+## What MagicCut adds
+
+Material Magic Wand retrieves parts independently using visual distance. MagicCut tests a structured, interactive alternative built on top of those frozen visual features:
+
+- Calibrated probabilities replace a single raw-distance cutoff.
+- A nearest-neighbour graph represents relationships among candidate parts.
+- Graph cut inference selects a globally consistent group instead of classifying each part in isolation.
+- Uncertainty estimates identify predictions that are most likely to be wrong.
+- An influence-aware policy chooses a useful yes or no clarification by combining uncertainty, graph connectivity, and question diversity.
+- Positive and negative answers become hard constraints, allowing the prediction to update immediately without retraining the encoder.
+
+The contribution is the inference, uncertainty, and interaction pipeline, together with a locked evaluation that documents both improvements and regressions. The results are intentionally reported as a careful negative result: the graph method did not beat the original baseline overall, but targeted feedback recovered a meaningful portion of its initial errors.
+
 ## How MagicCut works
 
-![MagicCut method](reports/generated/figures/method_diagram.png)
+![MagicCut method](assets/method_diagram.png)
 
 Each mesh is already divided into parts. The user selects one query part, shown in red in the demo.
 
@@ -66,7 +79,7 @@ The original Material Magic Wand threshold remained the strongest method overall
 
 The paired difference after three corrections was -0.1146 [-0.1812, -0.0551]. Its 95% mesh-bootstrap interval stayed below zero, so the final experiment does not support a claim that MagicCut outperforms Material Magic Wand.
 
-![F1 versus number of corrections](reports/generated/figures/f1_versus_clicks.png)
+![F1 versus number of corrections](assets/f1_versus_clicks.png)
 
 The graph performed well on the validation meshes, then became too conservative on larger unseen meshes. I kept and analyzed that regression because it revealed where the approach breaks. The experiment also showed that explicit feedback consistently repaired some graph errors, with a mean F1 gain of 0.1428 [0.1195, 0.1664] over zero-click MagicCut.
 
@@ -91,9 +104,9 @@ The evaluation uses benchmark labels to simulate answers. The interface itself a
 | `demo/` | Browser interface for interactive grouping |
 | `scripts/` | Data audits, embedding extraction, experiments, figures, and demo server |
 | `tests/` | Unit and HTTP integration tests |
-| `reports/generated/` | Frozen configurations, metrics, statistical analysis, and figures |
-| `docs/research_writeup.md` | Full research report and limitations |
-| `docs/technical_summary.md` | One-page technical summary |
+| `assets/` | Versioned figures and demo media used in this README |
+| `outputs/` | Locally generated experiment artifacts, excluded from Git |
+| `research_writeup.md` | Complete methodology, statistical analysis, and limitations |
 
 ## Run the project
 
@@ -119,10 +132,9 @@ uv run python scripts/extract_embeddings.py
 uv run python scripts/evaluate_locked.py
 uv run python scripts/analyze_statistics.py
 uv run python scripts/generate_figures.py
-uv run python scripts/audit_project.py
 ```
 
-The evaluation script refuses to overwrite an existing final result. This prevents accidental test-set tuning. Large datasets, checkpoints, and embedding caches are intentionally excluded from Git.
+The evaluation script refuses to overwrite an existing final result. This prevents accidental test-set tuning. Generated outputs, large datasets, checkpoints, and embedding caches are intentionally excluded from Git.
 
 To verify the repository from a clean temporary environment:
 
@@ -139,17 +151,17 @@ The clean check installs only from the lockfile, runs all unit and integration t
 - Metrics: macro precision, recall, F1, retrieval mAP, and risk coverage
 - Statistics: 5,000 bootstrap samples grouped by mesh
 - Reproducibility: archive hashes, feature shapes, IDs, finite values, and cache hashes are checked
-- Testing: 24 unit and integration tests, plus a clean-environment installation test
+- Testing: 19 unit and HTTP integration tests, plus a clean-environment installation test
 
-![Held-out precision and recall](reports/generated/figures/precision_recall.png)
+![Held-out precision and recall](assets/precision_recall.png)
 
 ## Failure analysis
 
 The best graph-cut improvement and the largest regression are shown below. Both examples were selected automatically from the held-out results using the change in F1, not by manual cherry-picking.
 
-![Largest held-out improvement](reports/generated/figures/success_example.png)
+![Largest held-out improvement](assets/success_example.png)
 
-![Largest held-out regression](reports/generated/figures/failure_example.png)
+![Largest held-out regression](assets/failure_example.png)
 
 Performance dropped most sharply on large meshes. Graph smoothing sometimes connected visually similar parts that had different material labels, while conservative unary probabilities missed small or disconnected positive groups. Positive and negative feedback helped correct these cases but three answers were not enough to eliminate the gap.
 
@@ -170,4 +182,4 @@ The original MagicCut source code is available under the [MIT License](LICENSE).
 - [Material Magic Wand paper](https://arxiv.org/abs/2603.17370), [project page](https://umangi-jain.github.io/material-magic-wand/), [benchmark](https://huggingface.co/datasets/umangijain/material-magic-wand), and [checkpoint](https://huggingface.co/umangijain/material-magic-wand)
 - [GaussianCut paper](https://arxiv.org/abs/2411.07555) and [code](https://github.com/umangi-jain/gaussiancut)
 
-For the complete methodology and statistical analysis, see the [research write-up](docs/research_writeup.md).
+For the complete methodology and statistical analysis, see the [research write-up](research_writeup.md).

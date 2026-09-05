@@ -25,8 +25,8 @@ def atomic_npz(path,ids,x):
     np.savez_compressed(temporary,ids=ids,x=x,checkpoint_sha256=CHECKPOINT_SHA256);os.replace(temporary,path)
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--max-new-meshes",type=int,default=None);args=parser.parse_args()
-    started=time.time();output=Path("reports/generated/embeddings");output.mkdir(parents=True,exist_ok=True);manifest_path=output/"manifest.json"
-    p33=read_json("reports/generated/benchmark_preparation/manifest.json");benchmark=Path("data/raw/benchmark");metadata=read_json(benchmark/DEDUP_METADATA_PATH)
+    started=time.time();output=Path("outputs/embeddings");output.mkdir(parents=True,exist_ok=True);manifest_path=output/"manifest.json"
+    p33=read_json("outputs/benchmark_preparation/manifest.json");benchmark=Path("data/raw/benchmark");metadata=read_json(benchmark/DEDUP_METADATA_PATH)
     checkpoint=Path("data/raw/checkpoints/checkpoint.pt")
     if sha256_file(checkpoint)!=CHECKPOINT_SHA256:raise ValueError("Checkpoint integrity failure")
     torch.set_num_threads(min(9,os.cpu_count() or 1));model,model_audit=load_released_encoder(checkpoint);model.eval();batch_size=128

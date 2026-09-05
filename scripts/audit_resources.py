@@ -38,7 +38,7 @@ def main() -> None:
         )
         report["checkpoint"] = audit_checkpoint(downloaded)
 
-    write_json("reports/generated/resource_audit.json", report)
+    write_json("outputs/resource_audit.json", report)
     print(json.dumps(report, indent=2))
 
 

@@ -11,8 +11,8 @@ IGNORED_ROOTS = (
     ROOT / "data/cache",
     ROOT / "data/work",
     ROOT / "raw_checkpoints",
-    ROOT / "reports/generated/locked_evaluation/progress.json",
-    ROOT / "reports/generated/locked_evaluation/raw_results.json",
+    ROOT / "outputs",
+    ROOT / "reports",
 )
 LIMIT = 10 * 1024 * 1024
 PRIVATE_MARKERS = (
@@ -27,10 +27,6 @@ def ignored(path: Path) -> bool:
     return (
         any(part in {"__pycache__", ".pytest_cache"} for part in path.parts)
         or any(root == path or root in path.parents for root in IGNORED_ROOTS)
-        or (
-        path.parent == ROOT / "reports/generated/locked_evaluation"
-        and path.name.startswith("progress.json.")
-        )
     )
 
 

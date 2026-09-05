@@ -39,8 +39,8 @@ def require_static_contract() -> dict:
 
 
 def main() -> None:
-    prompt35 = read_json(ROOT / "reports/generated/locked_evaluation/report.json")
-    raw_path = ROOT / "reports/generated/locked_evaluation/raw_results.json"
+    prompt35 = read_json(ROOT / "outputs/locked_evaluation/report.json")
+    raw_path = ROOT / "outputs/locked_evaluation/raw_results.json"
     if sha256_file(raw_path) != prompt35["raw_results_sha256"]:
         raise ValueError("locked evaluation digest mismatch")
     raw = read_json(raw_path)
@@ -112,7 +112,7 @@ def main() -> None:
         },
         "interface": require_static_contract(),
     }
-    output = ROOT / "reports/generated/demo_validation"
+    output = ROOT / "outputs/demo_validation"
     output.mkdir(parents=True, exist_ok=True)
     write_json(output / "report.json", report)
     print(json.dumps(report, indent=2))

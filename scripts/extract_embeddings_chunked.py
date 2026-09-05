@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Resume the unusually large final Prompt-34 mesh in exact FP32 chunks."""
+"""Resume unusually large meshes in exact FP32 chunks."""
 from __future__ import annotations
 
 import argparse
@@ -66,11 +66,11 @@ def main() -> None:
     parser.add_argument("--max-chunks", type=int, default=1)
     args = parser.parse_args()
 
-    output = Path("reports/generated/embeddings")
+    output = Path("outputs/embeddings")
     manifest_path = output / "manifest.json"
     report_path = output / "report.json"
     manifest = read_json(manifest_path)
-    p33 = read_json("reports/generated/benchmark_preparation/manifest.json")
+    p33 = read_json("outputs/benchmark_preparation/manifest.json")
     metadata = read_json(Path("data/raw/benchmark") / DEDUP_METADATA_PATH)
     expected_ids = sorted(map(int, metadata[FINAL_UID]["unique_ids"]))
     if len(expected_ids) != 4535:

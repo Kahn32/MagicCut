@@ -48,7 +48,7 @@ def get_engine() -> MagicCutDemo:
 
 @lru_cache(maxsize=32)
 def render_member(uid: str, part_id: int) -> tuple[Path, str]:
-    manifest = read_json(ROOT / "reports/generated/benchmark_preparation/manifest.json")
+    manifest = read_json(ROOT / "outputs/benchmark_preparation/manifest.json")
     if uid not in manifest["archives"]:
         raise KeyError(uid)
     archive = Path(manifest["archives"][uid]["local_path"])

@@ -193,8 +193,8 @@ def analyze(rows: list[dict], samples: int = 5000, seed: int = 36) -> dict:
 
 
 def main() -> None:
-    prompt35 = read_json("reports/generated/locked_evaluation/report.json")
-    raw_path = Path("reports/generated/locked_evaluation/raw_results.json")
+    prompt35 = read_json("outputs/locked_evaluation/report.json")
+    raw_path = Path("outputs/locked_evaluation/raw_results.json")
     if sha256_file(raw_path) != prompt35["raw_results_sha256"]:
         raise ValueError("Immutable locked evaluation digest mismatch")
     raw = read_json(raw_path)
@@ -210,7 +210,7 @@ def main() -> None:
         "heldout_94_meshes": analyze(heldout),
         "claim_policy": "No statistical-significance claim is made. Directional evidence is reported only when the mesh-bootstrap 95% interval excludes zero.",
     }
-    output = Path("reports/generated/statistics")
+    output = Path("outputs/statistics")
     output.mkdir(parents=True, exist_ok=True)
     write_json(output / "report.json", report)
     with (output / "final_quantitative_table.csv").open("w", newline="", encoding="utf-8") as handle:

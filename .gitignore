@@ -13,6 +13,5 @@ dist/
 *.npz
 checkpoint.pt
 .DS_Store
-reports/generated/locked_evaluation/progress.json
-reports/generated/locked_evaluation/progress.json.*
-reports/generated/locked_evaluation/raw_results.json
+outputs/
+reports/

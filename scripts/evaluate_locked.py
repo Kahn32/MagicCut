@@ -185,10 +185,10 @@ def bootstrap_by_mesh(rows, samples=2000, seed=0):
 
 
 def verify_frozen_inputs():
-    graph = read_json("reports/generated/graph_sweep/frozen_graph_configuration.json")
-    frozen = read_json("reports/generated/interaction_experiments/frozen_interactive_configuration.json")
-    report = read_json("reports/generated/interaction_experiments/report.json")
-    tuned = report["prompt_21"]["tuned_on_validation"]
+    graph = read_json("outputs/graph_sweep/frozen_graph_configuration.json")
+    frozen = read_json("outputs/interaction_experiments/frozen_interactive_configuration.json")
+    report = read_json("outputs/interaction_experiments/report.json")
+    tuned = report["graph_evaluation"]["tuned_on_validation"]
     expected_weights = INTERACTION["weights"]
     if graph != GRAPH or frozen["graph"] != GRAPH:
         raise ValueError("Frozen graph configuration drift")
@@ -200,18 +200,18 @@ def verify_frozen_inputs():
         raise ValueError("Frozen probability threshold drift")
     if not np.isclose(tuned["direct_distance_threshold"], DIRECT_THRESHOLD) or not np.isclose(tuned["adaptive_normalized_threshold"], ADAPTIVE_THRESHOLD):
         raise ValueError("Frozen baseline threshold drift")
-    if not report["prompt_21"]["graph_gate"]["passed"]:
+    if not report["graph_evaluation"]["graph_gate"]["passed"]:
         raise ValueError("MagicCut did not pass Gate 2")
 
 
 def main():
-    output = Path("reports/generated/locked_evaluation")
+    output = Path("outputs/locked_evaluation")
     output.mkdir(parents=True, exist_ok=True)
     raw_path = output / "raw_results.json"
     if raw_path.exists():
         raise FileExistsError("locked evaluation raw results are immutable; refusing to overwrite")
     verify_frozen_inputs()
-    manifest = read_json("reports/generated/embeddings/manifest.json")
+    manifest = read_json("outputs/embeddings/manifest.json")
     if not manifest.get("all_100_complete") or manifest.get("failures") or manifest.get("completed_meshes") != 100:
         raise ValueError("embedding extraction is not complete and clean")
     if manifest["checkpoint_sha256"] != CHECKPOINT_SHA256 or manifest["dataset_revision"] != DATASET_REVISION:

@@ -113,7 +113,7 @@ def evaluate_graph(cases,probabilities,decision_threshold,k,lam,sigma):
 
 def main():
     raw=Path("data/raw"); benchmark=raw/"benchmark"; checkpoint=raw/"checkpoints/checkpoint.pt"
-    cache_root=Path("data/cache/graph_feasibility"); output=Path("reports/generated/graph_feasibility")
+    cache_root=Path("data/cache/graph_feasibility"); output=Path("outputs/graph_feasibility")
     cache_root.mkdir(parents=True,exist_ok=True); output.mkdir(parents=True,exist_ok=True)
     if sha256_file(checkpoint)!=CHECKPOINT_SHA256: raise ValueError("Checkpoint SHA mismatch")
     model,model_audit=load_released_encoder(checkpoint); queries=load_queries(benchmark/LABELS_PREFIX)
@@ -130,14 +130,14 @@ def main():
         mesh_audit[uid]={"cache_hit":hit,"cache_key":key,"archive_sha256":sha256_file(archive),"representatives":len(ids)}
     val_cases=make_cases(VAL_UIDS,queries,groups,embeddings)
 
-    # Prompt 14 regression and Prompt 15 freeze happen before test cases exist.
+    # Fit and freeze retrieval calibration before constructing held-out test cases.
     calibrator=fit_calibrator(val_cases); probability_threshold,val_group=tune_probability_threshold(calibrator,val_cases)
-    if not np.isclose(probability_threshold,EXPECTED_THRESHOLD): raise AssertionError("Prompt 14 threshold regression")
+    if not np.isclose(probability_threshold,EXPECTED_THRESHOLD): raise AssertionError("Calibration threshold regression")
     val_probs=predict_case_probabilities(calibrator,val_cases); val_curve=risk_coverage_curve(val_probs,val_cases)
     selective_choice=choose_threshold(val_curve,target_risk=.05); confidence_threshold=selective_choice["confidence_threshold"]
     val_selective=evaluate_selective(val_probs,val_cases,confidence_threshold)
 
-    # Prompts 16--17 validation-only graph preparation and diagnostics.
+    # Prepare graph features and diagnostics using validation data only.
     graph_stats={}; per_k={}
     val_scores=[group_metrics({part for part,p in probs.items() if p>=probability_threshold},set(case.target))["f1"]
                 for case,probs in zip(val_cases,val_probs,strict=True)]
@@ -152,14 +152,14 @@ def main():
     for name,index in (("easy",easy_index),("difficult",difficult_index)):
         graph_figure(val_cases[index],build_knn_graph(val_cases[index].values,3),output/f"{name}_graph.png")
 
-    # Prompt 18 exact toy correctness.
+    # Verify graph-cut correctness on an exact toy problem.
     toy=toy_solver_audit()
 
-    # Prompt 19 fixed default one-click inference.
+    # Evaluate fixed default one-click inference.
     default_params={"k":3,"pairwise_lambda":.5,"sigma_factor":1.}
     default_val,default_val_selections=evaluate_graph(val_cases,val_probs,probability_threshold,3,.5,1.)
 
-    # Prompt 20 validation-only graph sweep; tie-break toward simpler/weaker smoothing.
+    # Sweep graph parameters on validation data; prefer simpler, weaker smoothing on ties.
     sweep=[]
     for k,lam,sigma in itertools.product((2,3,5,8),(0.,.1,.25,.5,1.,2.),(.5,1.,2.)):
         metrics,_=evaluate_graph(val_cases,val_probs,probability_threshold,k,lam,sigma)
@@ -171,7 +171,7 @@ def main():
     # Only now construct and evaluate test cases once.
     test_cases=make_cases(TEST_UIDS,queries,groups,embeddings); assert set(VAL_UIDS).isdisjoint(TEST_UIDS)
     test_probs=predict_case_probabilities(calibrator,test_cases); test_group=evaluate_threshold(test_probs,test_cases,probability_threshold)
-    if not np.isclose(test_group["f1"],EXPECTED_TEST_F1): raise AssertionError("Prompt 14 test regression")
+    if not np.isclose(test_group["f1"],EXPECTED_TEST_F1): raise AssertionError("Held-out retrieval regression")
     test_curve=risk_coverage_curve(test_probs,test_cases); test_selective=evaluate_selective(test_probs,test_cases,confidence_threshold)
     default_test,default_test_selections=evaluate_graph(test_cases,test_probs,probability_threshold,3,.5,1.)
     frozen_test,frozen_test_selections=evaluate_graph(test_cases,test_probs,probability_threshold,**{
@@ -195,29 +195,29 @@ def main():
         "integrity":{"model":model_audit,"checkpoint_sha256":CHECKPOINT_SHA256,"mesh_disjoint":True,
                      "test_constructed_after_freeze":True,"cache_hits":sum(m["cache_hit"] for m in mesh_audit.values())},
         "meshes":mesh_audit,"cold_encode_seconds_this_run":cold_seconds,
-        "prompt_14_regression":{"probability_threshold":probability_threshold,"validation":val_group,"test":test_group,
+        "retrieval_reproduction":{"probability_threshold":probability_threshold,"validation":val_group,"test":test_group,
                                 "test_calibration":calibration_metrics(calibrator,test_cases)},
-        "prompt_15":{"target_risk":.05,"frozen_confidence_threshold":confidence_threshold,
+        "risk_calibration":{"target_risk":.05,"frozen_confidence_threshold":confidence_threshold,
             "validation":val_selective|{"aurc":area_under_risk_coverage(val_curve)},
             "test":test_selective|{"aurc":area_under_risk_coverage(test_curve)}},
-        "prompt_16":{"feature_families":["part","context","full_object"],"normalization":"per-family L2",
+        "feature_contract":{"feature_families":["part","context","full_object"],"normalization":"per-family L2",
                      "graph_statistics":graph_stats},
-        "prompt_17":{"easy":{"uid":val_cases[easy_index].uid,"query":val_cases[easy_index].query,"baseline_f1":val_scores[easy_index]},
+        "case_diagnostics":{"easy":{"uid":val_cases[easy_index].uid,"query":val_cases[easy_index].query,"baseline_f1":val_scores[easy_index]},
                      "difficult":{"uid":val_cases[difficult_index].uid,"query":val_cases[difficult_index].query,"baseline_f1":val_scores[difficult_index]},
                      "k_diagnostics":per_k},
-        "prompt_18":toy,
-        "prompt_19":{"default_parameters":default_params,"validation":default_val,"test":default_test,
+        "toy_graph_validation":toy,
+        "default_graph_evaluation":{"default_parameters":default_params,"validation":default_val,"test":default_test,
                      "held_out_expanded_results":expanded,
                      "expanded_original_macro":{name:float(np.mean([row["original_part_metrics"][name] for row in expanded]))
                                                 for name in ("precision","recall","f1")}},
-        "prompt_20":{"combinations":len(sweep),"selected_on_validation":frozen_graph,
+        "graph_hyperparameter_sweep":{"combinations":len(sweep),"selected_on_validation":frozen_graph,
                      "selected_validation_metrics":{key:best[key] for key in ("precision","recall","f1","worst_query_f1")},
                      "frozen_test_metrics":frozen_test,"sweep":sweep}}
     write_json(output/"report.json",report); write_json(output/"frozen_configuration.json",{
         "dataset_revision":REVISION,"calibration_probability_threshold":probability_threshold,
         "selective_confidence_threshold":confidence_threshold,"graph":frozen_graph})
-    print(json.dumps({"prompt_14":report["prompt_14_regression"],"prompt_15":report["prompt_15"],
-        "prompt_17":report["prompt_17"],"prompt_18":toy,"prompt_19":{"validation":default_val,"test":default_test},
-        "prompt_20":{key:report["prompt_20"][key] for key in ("combinations","selected_on_validation","selected_validation_metrics","frozen_test_metrics")},
+    print(json.dumps({"retrieval_reproduction":report["retrieval_reproduction"],"risk_calibration":report["risk_calibration"],
+        "case_diagnostics":report["case_diagnostics"],"toy_graph_validation":toy,"default_graph_evaluation":{"validation":default_val,"test":default_test},
+        "graph_hyperparameter_sweep":{key:report["graph_hyperparameter_sweep"][key] for key in ("combinations","selected_on_validation","selected_validation_metrics","frozen_test_metrics")},
         "cold_encode_seconds":cold_seconds},indent=2))
 if __name__=="__main__": main()

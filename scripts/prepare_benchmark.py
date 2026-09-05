@@ -28,7 +28,7 @@ def validate_archive(path,uid,expected_parts):
     return {"files":len(names),"representatives":len(parts),"view_tokens":sorted(views),"safe_paths":True}
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--max-new",type=int,default=None);args=parser.parse_args()
-    started=time.time();benchmark=Path("data/raw/benchmark");output=Path("reports/generated/benchmark_preparation");output.mkdir(parents=True,exist_ok=True)
+    started=time.time();benchmark=Path("data/raw/benchmark");output=Path("outputs/benchmark_preparation");output.mkdir(parents=True,exist_ok=True)
     metadata=read_json(benchmark/DEDUP_METADATA_PATH);listed=set(read_json(benchmark/UIDS_PATH));rendered=set(metadata);official=official_files()
     expected_paths={uid:f"{DEDUP_IMAGES_PREFIX}{uid}.tar.gz" for uid in rendered};missing=set(expected_paths.values())-set(official)
     if missing:raise ValueError(f"Metadata archives absent upstream: {sorted(missing)}")

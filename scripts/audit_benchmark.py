@@ -82,7 +82,7 @@ def main() -> None:
                 "representative_mappings_equal": dedup == full,
             }
 
-    write_json("reports/generated/benchmark_audit.json", report)
+    write_json("outputs/benchmark_audit.json", report)
     print(json.dumps(report, indent=2))
 
 

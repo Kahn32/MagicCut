@@ -137,7 +137,7 @@ def main() -> None:
             }
         )
     contact_sheet = create_contact_sheet(
-        query_rows, "reports/generated/one_mesh_contact_sheet.png"
+        query_rows, "outputs/one_mesh_contact_sheet.png"
     )
     sizes = Counter(item["size"] for item in renders)
     views = Counter(item["view"] for item in renders)
@@ -160,7 +160,7 @@ def main() -> None:
         "contact_sheet": str(contact_sheet),
         "sample_renders": renders[:20],
     }
-    write_json("reports/generated/one_mesh_audit.json", report)
+    write_json("outputs/one_mesh_audit.json", report)
     print(json.dumps(report, indent=2))
 
 

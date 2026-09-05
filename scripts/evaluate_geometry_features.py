@@ -19,7 +19,7 @@ def pairwise(values,geometry,alpha):
     distance={edge:visual[edge]+alpha*scale*geo[edge] for edge in visual};sigma=max(FROZEN["sigma_factor"]*np.median(list(distance.values())),1e-12)
     return {edge:math.exp(-(d*d)/(2*sigma*sigma)) for edge,d in distance.items()}
 def main():
-    output=Path("reports/generated/geometry_ablation");output.mkdir(parents=True,exist_ok=True);mesh=Path(f"data/raw/objaverse/{UID}.glb")
+    output=Path("outputs/geometry_ablation");output.mkdir(parents=True,exist_ok=True);mesh=Path(f"data/raw/objaverse/{UID}.glb")
     geometry,audit=extract_audited_alfajor_features(mesh);validation,_,_=load_experiment();calibrator=fit_calibrator(validation);threshold,_=tune_probability_threshold(calibrator,validation)
     cases=[case for case in validation if case.uid==UID];probs=predict_case_probabilities(calibrator,cases);sweep=[]
     for alpha in (0.,.1,.25,.5,1.,2.):

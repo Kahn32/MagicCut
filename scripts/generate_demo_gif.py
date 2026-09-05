@@ -83,9 +83,9 @@ def frame(uid: str, parts: list[int], images: dict[int, Image.Image], state: dic
 
 
 def main() -> None:
-    raw = read_json(ROOT / "reports/generated/locked_evaluation/raw_results.json")
-    report35 = read_json(ROOT / "reports/generated/locked_evaluation/report.json")
-    if sha256_file(ROOT / "reports/generated/locked_evaluation/raw_results.json") != report35["raw_results_sha256"]:
+    raw = read_json(ROOT / "outputs/locked_evaluation/raw_results.json")
+    report35 = read_json(ROOT / "outputs/locked_evaluation/report.json")
+    if sha256_file(ROOT / "outputs/locked_evaluation/raw_results.json") != report35["raw_results_sha256"]:
         raise ValueError("locked evaluation digest mismatch")
     row = choose_case(raw["rows"])
     engine = MagicCutDemo(ROOT)
@@ -97,10 +97,10 @@ def main() -> None:
             break
         states.append(engine.feedback(states[-1]["session_id"], recommended, recommended in target))
     parts = shown_parts(row, states)
-    manifest33 = read_json(ROOT / "reports/generated/benchmark_preparation/manifest.json")
+    manifest33 = read_json(ROOT / "outputs/benchmark_preparation/manifest.json")
     images = medium_renders(row["uid"], set(parts), manifest33)
     frames = [frame(row["uid"], parts, images, state, index) for index, state in enumerate(states)]
-    output = ROOT / "reports/generated/presentation"
+    output = ROOT / "outputs/presentation"
     output.mkdir(parents=True, exist_ok=True)
     gif = output / "demo.gif"
     frames[0].save(gif, save_all=True, append_images=frames[1:], duration=1300, loop=0, optimize=True)

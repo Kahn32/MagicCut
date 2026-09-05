@@ -13,7 +13,7 @@ MAX_CHUNK_BYTES = 450_000_000
 
 
 def main() -> None:
-    benchmark_preparation = read_json("reports/generated/benchmark_preparation/manifest.json")
+    benchmark_preparation = read_json("outputs/benchmark_preparation/manifest.json")
     if not benchmark_preparation.get("all_100_valid") or benchmark_preparation.get("failures"):
         raise ValueError("benchmark preparation must be complete and clean before checkpointing")
     files = []

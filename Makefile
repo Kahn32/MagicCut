@@ -1,4 +1,4 @@
-.PHONY: install test audit-data extract evaluate statistics figures demo final-audit clean-check
+.PHONY: install test audit-data extract evaluate statistics figures demo clean-check
 
 install:
 	uv sync --frozen --extra dev
@@ -23,9 +23,6 @@ figures:
 
 demo:
 	uv run python scripts/serve_demo.py
-
-final-audit:
-	uv run python scripts/audit_project.py
 
 clean-check:
 	uv run python scripts/audit_git_payload.py

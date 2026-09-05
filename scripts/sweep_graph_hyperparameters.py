@@ -29,7 +29,7 @@ def plot(rows,feature,path):
     path.parent.mkdir(parents=True,exist_ok=True);image.save(path)
 
 def main():
-    output=Path("reports/generated/graph_sweep");output.mkdir(parents=True,exist_ok=True)
+    output=Path("outputs/graph_sweep");output.mkdir(parents=True,exist_ok=True)
     validation,test,_=load_experiment();calibrator=fit_calibrator(validation);threshold,_=tune_probability_threshold(calibrator,validation)
     if not np.isclose(threshold,EXPECTED_THRESHOLD):raise AssertionError("Calibration threshold drift")
     val_probs=predict_case_probabilities(calibrator,validation);test_probs=predict_case_probabilities(calibrator,test)

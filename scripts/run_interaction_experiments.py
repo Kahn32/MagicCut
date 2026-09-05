@@ -231,13 +231,13 @@ def ambiguity_examples(result,limit=5):
     return sorted(rows,key=lambda r:(-r["negative_answers"],-r["delta_f1"]))[:limit]
 
 def main():
-    output=Path("reports/generated/interaction_experiments"); output.mkdir(parents=True,exist_ok=True)
+    output=Path("outputs/interaction_experiments"); output.mkdir(parents=True,exist_ok=True)
     val_cases,test_cases,cache_hits=load_experiment(); calibrator=fit_calibrator(val_cases)
     probability_threshold,_=tune_probability_threshold(calibrator,val_cases)
-    if not np.isclose(probability_threshold,EXPECTED_THRESHOLD): raise AssertionError("Prompt-14 threshold drift")
+    if not np.isclose(probability_threshold,EXPECTED_THRESHOLD): raise AssertionError("Calibration threshold drift")
     val_probs=predict_case_probabilities(calibrator,val_cases); test_probs=predict_case_probabilities(calibrator,test_cases)
 
-    # Prompt 21: tune non-learned comparators on validation only, then evaluate all four methods.
+    # Tune non-learned comparators on validation data, then evaluate all four methods.
     direct_threshold,_=tune_distance_rule(val_cases,False); adaptive_threshold,_=tune_distance_rule(val_cases,True)
     validation=method_evaluation(val_cases,val_probs,direct_threshold,adaptive_threshold,probability_threshold)
     test=method_evaluation(test_cases,test_probs,direct_threshold,adaptive_threshold,probability_threshold)
@@ -247,11 +247,11 @@ def main():
     catastrophic_base=sum(r["precision"]<.5 for r in validation["calibrated"]["per_query"])
     catastrophic_graph=sum(r["precision"]<.5 for r in validation["magiccut"]["per_query"])
 
-    # Prompt 22: exhaustive case diagnostics; top tens are views over all 19 queries.
+    # Run exhaustive case diagnostics; top-ten lists are views over all validation queries.
     failures={"validation":failure_analysis(val_cases,val_probs,validation["calibrated"],validation["magiccut"]),
               "test":failure_analysis(test_cases,test_probs,test["calibrated"],test["magiccut"])}
 
-    # Prompts 23--24: exact min-marginals and five-way error-detection comparison.
+    # Compare exact min-marginals with four lightweight error-detection signals.
     val_uncertainty,val_ambiguity=uncertainty_evaluation(val_cases,val_probs,validation["magiccut"]["selections"])
     best_auc=max(row["error_detection_auroc"] for row in val_uncertainty.values() if row["error_detection_auroc"] is not None)
     eligible=[(name,row) for name,row in val_uncertainty.items() if row["error_detection_auroc"] is not None and
@@ -311,13 +311,12 @@ def main():
     curve_plot(val_policies,output/"validation_f1_per_click.png"); curve_plot(test_policies,output/"test_f1_per_click.png")
     report={"protocol":{"dataset_revision":REVISION,"checkpoint_sha256":CHECKPOINT_SHA256,
         "validation_uids":list(VAL_UIDS),"test_uids":list(TEST_UIDS),"cache_hits":cache_hits,
-        "test_not_used_for_threshold_or_policy_selection":True,"click_budget":3,"random_seeds":20,
-        "canonical_user_supplied_roadmap":True},
-        "prompt_21":{"tuned_on_validation":{"direct_distance_threshold":direct_threshold,
+        "test_not_used_for_threshold_or_policy_selection":True,"click_budget":3,"random_seeds":20},
+        "graph_evaluation":{"tuned_on_validation":{"direct_distance_threshold":direct_threshold,
             "adaptive_normalized_threshold":adaptive_threshold,"probability_threshold":probability_threshold,
             "graph":FROZEN},"validation":strip_internal(validation),"test":strip_internal(test),"graph_gate":graph_gate},
-        "prompt_22":failures|{"decision":"pivot graph from one-click claim to uncertainty-aware interaction"},
-        "prompt_23":{"validation_most_ambiguous":val_ambiguity[:20],"test_most_ambiguous":test_ambiguity[:20],
+        "graph_failure_analysis":failures|{"decision":"pivot graph from one-click claim to uncertainty-aware interaction"},
+        "min_marginal_analysis":{"validation_most_ambiguous":val_ambiguity[:20],"test_most_ambiguous":test_ambiguity[:20],
             "definition":"absolute energy gap between forced-positive and forced-negative optima",
             "validation":{"candidates":len(val_ambiguity),"cut_solves":len(val_cases)+2*len(val_ambiguity),
                 "mean_seconds_per_query":val_uncertainty["graph_min_marginal"]["mean_seconds_per_query"],
@@ -325,22 +324,22 @@ def main():
             "test":{"candidates":len(test_ambiguity),"cut_solves":len(test_cases)+2*len(test_ambiguity),
                 "mean_seconds_per_query":test_uncertainty["graph_min_marginal"]["mean_seconds_per_query"],
                 "mistakes_in_20_most_ambiguous":sum(r["mistake"] for r in test_ambiguity[:20])}},
-        "prompt_24":{"selection_rule":"within 0.025 of best validation error AUROC, then fastest mean runtime",
+        "uncertainty_comparison":{"selection_rule":"within 0.025 of best validation error AUROC, then fastest mean runtime",
             "selected":selected_uncertainty,"validation":val_uncertainty,"test":test_uncertainty},
-        "prompt_25":{"simulator":"benchmark oracle; hard positive/negative seeds; rerun cut; stop at perfect F1 or 3 clicks",
+        "feedback_simulator":{"simulator":"benchmark oracle; hard positive/negative seeds; rerun cut; stop at perfect F1 or 3 clicks",
             "positive_response":"candidate is added to hard-positive set","negative_response":"candidate is added to hard-negative set",
             "deterministic_history_count":len(val_cases)},
-        "prompt_26":{"policy":"random clarification over currently unlabeled candidates","random_seeds":20,"validation":random_val,"test":random_test},
-        "prompt_27":{"policy":f"uncertainty-only using {selected_uncertainty}","validation":uncertainty_val,"test":uncertainty_test,
+        "random_clarification":{"policy":"random clarification over currently unlabeled candidates","random_seeds":20,"validation":random_val,"test":random_test},
+        "uncertainty_clarification":{"policy":f"uncertainty-only using {selected_uncertainty}","validation":uncertainty_val,"test":uncertainty_test,
             "validation_question_audit":question_audit(uncertainty_val),"test_question_audit":question_audit(uncertainty_test)},
-        "prompt_28":{"policy":"normalized uncertainty + weighted degree + distance from queried parts","weight_grid_size":len(weight_sweep),
+        "influence_clarification":{"policy":"normalized uncertainty + weighted degree + distance from queried parts","weight_grid_size":len(weight_sweep),
             "weight_sweep":weight_sweep,"selected_weights":best_weights_row["weights"],"validation":influence_val,"test":influence_test},
-        "prompt_29":{"acquisition":"validation-tuned influence-aware","positive_only":{"validation":positive_val,"test":positive_test},
+        "feedback_ablation":{"acquisition":"validation-tuned influence-aware","positive_only":{"validation":positive_val,"test":positive_test},
             "negative_only":{"validation":negative_val,"test":negative_test},
             "unrestricted_binary":{"validation":influence_val,"test":influence_test},
             "material_ambiguity_examples":ambiguity_examples(influence_test),
             "definition_note":"Feedback-type ablations are oracle-filtered to isolate positive versus negative evidence; unrestricted policy is deployable."},
-        "prompt_30":{"validation_policy_selection":selected_policy,"claim_gate":active_gate,
+        "active_interaction_verdict":{"validation_policy_selection":selected_policy,"claim_gate":active_gate,
             "metrics":{"validation":{k:without_histories(v) for k,v in val_policies.items()},
                        "test":{k:without_histories(v) for k,v in test_policies.items()}},
             "all_validation_curves":{k:v["curve"] for k,v in val_policies.items()},"all_test_curves":{k:v["curve"] for k,v in test_policies.items()}}}
@@ -348,9 +347,9 @@ def main():
         "dataset_revision":REVISION,"probability_threshold":probability_threshold,"graph":FROZEN,
         "uncertainty_method":selected_uncertainty,"clarification_policy":selected_policy,
         "influence_weights":best_weights_row["weights"],"click_budget":3})
-    print(json.dumps({"prompt_21":{"validation":strip_internal(validation),"test":strip_internal(test),"gate":graph_gate},
-        "prompt_24":{"selected":selected_uncertainty,"validation":val_uncertainty,"test":test_uncertainty},
-        "prompt_30":{"selected":selected_policy,"gate":active_gate,
+    print(json.dumps({"graph_evaluation":{"validation":strip_internal(validation),"test":strip_internal(test),"gate":graph_gate},
+        "uncertainty_comparison":{"selected":selected_uncertainty,"validation":val_uncertainty,"test":test_uncertainty},
+        "active_interaction_verdict":{"selected":selected_policy,"gate":active_gate,
             "validation_curves":{k:v["curve"] for k,v in val_policies.items()},
             "test_curves":{k:v["curve"] for k,v in test_policies.items()}}},indent=2))
 

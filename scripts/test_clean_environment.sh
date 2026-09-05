@@ -8,9 +8,8 @@ trap 'rm -rf "$clean_root"' EXIT
 tar -C "$project_root" \
   --exclude=.venv --exclude=data/raw --exclude=data/cache --exclude=data/work \
   --exclude=raw_checkpoints --exclude=.pytest_cache --exclude='*/__pycache__' \
-  --exclude=reports/generated/locked_evaluation/progress.json \
-  --exclude='reports/generated/locked_evaluation/progress.json.*' \
-  --exclude=reports/generated/locked_evaluation/raw_results.json \
+  --exclude=outputs/ \
+  --exclude=reports/ \
   -cf - . | tar -C "$clean_root" -xf -
 
 cd "$clean_root"

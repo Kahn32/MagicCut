@@ -282,8 +282,8 @@ def example_panel(row: dict, manifest33: dict, output: Path, name: str) -> list[
 
 
 def main() -> None:
-    report35 = read_json("reports/generated/locked_evaluation/report.json")
-    raw_path = Path("reports/generated/locked_evaluation/raw_results.json")
+    report35 = read_json("outputs/locked_evaluation/report.json")
+    raw_path = Path("outputs/locked_evaluation/raw_results.json")
     if sha256_file(raw_path) != report35["raw_results_sha256"]:
         raise ValueError("locked evaluation raw-result digest mismatch")
     raw = read_json(raw_path)
@@ -291,7 +291,7 @@ def main() -> None:
     deltas = [row["methods"]["magiccut"]["f1"] - row["methods"]["material_magic_wand"]["f1"] for row in heldout]
     success = heldout[int(np.argmax(deltas))]
     failure = heldout[int(np.argmin(deltas))]
-    output = Path("reports/generated/figures")
+    output = Path("outputs/figures")
     output.mkdir(parents=True, exist_ok=True)
     style()
     files = []
@@ -300,8 +300,8 @@ def main() -> None:
     files += f1_clicks(report35, output)
     files += calibration(heldout, output)
     files += risk_coverage(heldout, output)
-    manifest34 = read_json("reports/generated/embeddings/manifest.json")
-    manifest33 = read_json("reports/generated/benchmark_preparation/manifest.json")
+    manifest34 = read_json("outputs/embeddings/manifest.json")
+    manifest33 = read_json("outputs/benchmark_preparation/manifest.json")
     files += graph_figure(success, manifest34, output)
     files += example_panel(success, manifest33, output, "success_example")
     files += example_panel(failure, manifest33, output, "failure_example")

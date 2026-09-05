@@ -58,7 +58,7 @@ class MagicCutDemo:
     def __init__(self, root: str | Path = ".") -> None:
         self.root = Path(root)
         benchmark = self.root / "data/raw/benchmark"
-        manifest = read_json(self.root / "reports/generated/embeddings/manifest.json")
+        manifest = read_json(self.root / "outputs/embeddings/manifest.json")
         self.embeddings = _load_embeddings(manifest)
         self.groups = normalize_dedup_metadata(read_json(benchmark / DEDUP_METADATA_PATH))
         queries = load_queries(benchmark / LABELS_PREFIX)

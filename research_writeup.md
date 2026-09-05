@@ -8,7 +8,7 @@ Material Magic Wand retrieves material-consistent components of an untextured, p
 
 The input is an untextured mesh already decomposed into fine-grained parts and one selected query part. The output is the subset of parts intended to share a material with that query. This is intra-mesh grouping, not initial part segmentation, material recognition from texture, or cross-object retrieval.
 
-Material-aware grouping is intrinsically ambiguous: geometry, context, and artistic intent can disagree. A single global distance threshold cannot express “this similar-looking piece is not part of my intended group.” Our research question is therefore not only whether a graph improves a frozen retrieval decision, but whether calibrated uncertainty and explicit positive/negative constraints reduce correction effort.
+Material-aware grouping is intrinsically ambiguous: geometry, context, and artistic intent can disagree. A single global distance threshold cannot express that a similar-looking piece should be excluded from the intended group. Our research question is therefore not only whether a graph improves a frozen retrieval decision, but whether calibrated uncertainty and explicit positive/negative constraints reduce correction effort.
 
 ## 2. Material Magic Wand
 
